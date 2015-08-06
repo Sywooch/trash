@@ -1,0 +1,31 @@
+*{margin:0; padding:0;}
+html, body {}
+body {color:#333; font:normal 62.5% arial;}
+
+A IMG {border:0;} 
+A {color:#009cff; text-decoration:none;}
+A:hover {text-decoration:underline;}
+
+P {font:normal 14px/20px Arial; margin:0 0 20px;}
+.tInd {padding-left:30px;}
+H1, .h1Size {font:normal 21px Arial; padding:0 0 15px;}
+H3, .h3Size {font:bold 17px Arial; padding:0 0 15px;}
+.floatL {float:left;}
+.floatR {float:right;}
+.mB5 {margin-bottom:5px !important;}
+.mB10 {margin-bottom:10px !important;}
+.mB20 {margin-bottom:20px !important;}
+
+.pageLayout {width:880px; margin:20px auto 0; font-size:14px;}
+.img {display:block;}
+.img.floatL {margin:0 10px 10px 0;}
+.img.floatR {margin:0 0 10px 10px;}
+
+UL, UL LI {list-style:none;}
+.ol-list {margin:0 0 20px 30px;}
+	.ol-list LI {line-height:20px; padding:0 0 5px;}
+.ul-list {margin:0 0 20px 30px;}
+	.ul-list LI {line-height:20px; padding:0 0 0 20px; background:url(i/bul-big.gif) no-repeat 0 5px;}
+	
+.list LI {line-height:30px;}
+

@@ -1,0 +1,87 @@
+{
+	"autoload": {
+		"psr-4": {
+			"dfs\\": "protected/",
+			"likefifa\\": "protected/"
+		}
+	},
+	"require": {
+		"yiisoft/yii": "1.1.14",
+		"phpunit/phpunit": "3.7.*",
+		"phpunit/dbunit": ">=1.2",
+		"phing/phing": "dev-master",
+		"yriveiro/php-fslock": "dev-master",
+		"willdurand/geocoder": "2.2.0",
+		"ivaynberg/select2": "3.5.0",
+		"iamsalnikov/MobileDetect": "dev-master#fe33fc4ad38e5e00b665997f61da117256c4260e",
+		"pklauzinski/jscroll": "dev-master",
+		"mandrill/mandrill": "1.0.*",
+		"dfs/smsc": "1.0",
+        "dfs/common": "dev-master",
+		"tapmodo/jcrop": "dev-master",
+		"malsup/form": "dev-master",
+		"ins0/google-measurement-php-client": "dev-master",
+		"clevertech/yii-booster" : "v4.0.1",
+        "phpoffice/phpexcel": "dev-master",
+        "wisembly/elephant.io": "v2.0.4",
+        "nervo/yuicompressor": "dev-master"
+	},
+	"repositories": [
+		{
+			"type": "package",
+			"package": {
+				"name": "pklauzinski/jscroll",
+				"version": "dev-master",
+				"source": {
+					"type": "git",
+					"url": "http://github.com/pklauzinski/jscroll",
+					"reference": "master"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "iamsalnikov/MobileDetect",
+				"version": "dev-master",
+				"source": {
+					"type": "git",
+					"url": "http://github.com/iamsalnikov/MobileDetect",
+					"reference": "master"
+				},
+				"autoload": {
+					"classmap": ["MobileDetect/MobileDetect.php"],
+					"files": ["MobileDetect/lib/Mobile_Detect.php"]
+				}
+			}
+		},
+		{
+			"type": "vcs",
+			"url": "git@bitbucket.org:dfsru/component_smsc.git"
+		},
+        {
+            "type": "vcs",
+            "url": "git@bitbucket.org:dfsru/dfs_common.git"
+        },
+		{
+			"type": "package",
+			"package": {
+				"name": "tapmodo/jcrop",
+				"version": "dev-master",
+				"source": {
+					"type": "git",
+					"url": "http://github.com/tapmodo/jcrop",
+					"reference": "master"
+				}
+			}
+		},
+        {
+            "type": "vcs",
+            "url": "git@github.com:clevertech/YiiBooster.git"
+        }
+	],
+	"config": {
+		"vendor-dir": "protected/vendors",
+		"discard-changes": true
+	}
+}

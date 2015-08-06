@@ -1,0 +1,100 @@
+/* content */
+	.landing-head, .landing-head h1 {text-align:center; font-weight:bold; font-size:24px; font-style:italic; color:#3d3d3d; position:relative;}
+	.landing-head {margin-top:-6px;}
+	
+	.col-left {padding-top:45px; width:450px; padding-left:45px;}
+	.col-left .head {font-style:italic; color:#4aa9eb; font-size:18px; font-weight:bold; line-height:1.25em; margin-bottom:24px; padding-top: 33px;}
+	.col-left .head span {color:#2883c3;}
+	.col-left .txt-bl-item {position:relative; margin-bottom:23px; padding-left:60px; font-size:16px; line-height:1.55em;}
+	.col-left .txt-bl-head {color:#ca2092; font-style:italic; font-weight:bold; margin-bottom:3px;}
+	.col-left .ico {position:absolute; left:-3px; top:29px; background:url("../i/landing/ico-sprite.png") no-repeat; width:43px; height:45px; overflow:hidden;}
+	.col-left .ico-2 {background-position:0 -45px;}
+	.col-left .ico-3 {background-position:0 -90px;}
+	.col-left .count-people {border-bottom:1px; display:inline-block; font-size:17px; font-weight:bold; text-align:center; font-family:Tahoma, sans-serif;}
+	.col-left .count-people span {width:17px; display:inline-block; background:url("../i/landing/ico-sprite.png") 0 -239px no-repeat;}
+	.col-left .count-corner {width:8px; vertical-align:bottom; display:inline-block; height:21px; background:url("../i/landing/ico-sprite.png") 0 -217px no-repeat; margin-right:-2px; position: relative}
+	.col-left .count-corner.count-corner-r {background-position:-8px -217px; margin:0; position: relative; left:-2px;}
+	
+	.col-right {float:right; width:380px;}
+	
+	.col-right .city {height:66px; width:345px; background:url("../i/landing/ico-city-auth.png") center 0 no-repeat;}
+	.col-right .form-n {font-size:17px; font-style:italic; margin-bottom:5px; color:#3d3d3d;}
+	.col-right .form-wrap {
+		margin:0 46px 0 0;
+		padding:23px 20px 26px;		
+		border:3px solid #4aa9eb; 
+		width:auto;
+	}
+	.form-success {
+		position:absolute; 
+		width:100%; 
+		height:100%; 
+		display:none; 
+		background-color:#efefef; 
+		opacity:0.9; 
+		top:0; 
+		text-align:center;
+		left:0; 
+		z-index:5;
+		-webkit-border-radius: 7px; 
+		-moz-border-radius: 7px; 
+		border-radius: 7px; 
+	}
+	.form-landing .form-inp {margin-bottom:16px;}
+	.popup-reg-landing {background-color: #F0F0F0; -moz-border-radius: 14px; -webkit-border-radius: 14px; border-radius: 14px; font-size: 17px; font-style: italic; margin-left: -250px; padding: 15px 17px 15px 15px; width: 500px;}
+	.reg-type_user {padding-top: 5px; margin-bottom: 20px;}
+	.reg-type_user .form-inp_check {margin:0 38px 0 3px;}
+
+	.reg-auth_panel {
+		position: relative;
+		background: url('/i/bg-auth-soc.png') 0 0 no-repeat;
+		margin-bottom: 7px;
+		margin-left: -41px;
+		margin-right: -40px;
+		padding: 13px 18px 13px 32px;
+		line-height: 20px;
+		height: 61px;
+		width: 282px;
+		color: #fff;
+		font-size: 17px;
+		text-shadow: 0 1px 0 #ad0081;
+	}
+	.reg-auth_panel .auth-service {
+		background: url('/i/ico-social-landing.png') 0 0 no-repeat;
+		float: right;
+		width: 31px;
+		height: 31px;
+		margin-right: 15px;
+		margin-top: 7px;
+	}
+	.reg-auth_panel .auth-service.vkontakte {
+		background-position: -45px 0;
+	}
+	.reg-auth_panel .auth-service.odnoklassniki {
+		background-position: -90px 0;
+	}
+	
+	/* style button */
+		.style-btn {cursor:pointer;}
+	/* style button */
+/* content */
+
+/* ie hacks */
+	/* ie 6 */
+		.ie-6 .col-left .txt-bl-item, .ie-6 .col-right .form .city, .ie-6 .col-right .form-inp {zoom:1;}
+		.ie-6 .col-right .form {margin:0;}
+	/* ie 6 */
+
+	/* lte ie 7 */
+		.lt-ie8 .count-people, 
+		.lt-ie8 #footer .form-inp, 
+		.lt-ie8 .footer-btn-submit, 
+		.lt-ie8 .count-corner {
+			display:inline;
+		}
+	/* lte ie 7 */
+	/* lte ie 9 */
+		.lt-ie9 .form-success {filter:alpha(opacity=90)}
+		.lt-ie9 #footer .form-inp {border-color:#787878 #89898b #d6d6d6 #89898b;}
+	/* lte ie 9 */
+/* ie hacks */

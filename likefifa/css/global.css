@@ -1,0 +1,359 @@
+.prof-photo_imgs .item {
+	float: left;
+	margin-left: 7px;
+	margin-bottom: 7px;
+	width: 175px;
+	position: relative;
+}
+
+.prof-photo_imgs .first {
+	margin-left: 0px;
+}
+
+.prof-photo_imgs .social-likes {
+	position: absolute;
+	left: 5px;
+	top: 5px;
+}
+
+.prof-photo_imgs .first {
+	margin-left: 0px;
+}
+
+.prof-photo_imgs_wrap,
+.prof-photo_add {
+	overflow: hidden;
+	border: 3px solid #fff;
+	position: relative;
+	z-index: 2;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+.prof-photo_imgs_img,
+.prof-photo_add a {
+	overflow: hidden;
+	width: 169px;
+	height: 118px;
+	display: block;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	position: relative;
+}
+
+.prof-photo_imgs_img:before, .prof-photo_add #load-img_wrap:before {
+	content: "";
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 169px;
+	height: 118px;
+	border: 10px solid #fff;
+	margin: -10px;
+	border-radius: 20px;
+	box-sizing: content-box;
+}
+
+.prof-photo_imgs .del {
+	position: absolute;
+	right: 4px;
+	top: 4px;
+	color: #3d3d3d;
+	font-size: 16px;
+	text-decoration: none;
+}
+
+.prof-photo_imgs .del img {
+	position: absolute;
+	z-index: 2;
+	right: 0px;
+	top: 0px;
+}
+
+.prof-photo_imgs .del span {
+	-webkit-border-radius: 9px;
+	-moz-border-radius: 9px;
+	border-radius: 9px;
+	background-color: #fff;
+	padding: 0 22px 0 16px;
+	height: 19px;
+	display: none;
+}
+
+.prof-photo_imgs .del:hover {
+	z-index: 2;
+}
+
+.prof-photo_imgs .del:hover span {
+	display: inline-block;
+}
+
+.prof-photo_imgs .del span i {
+	font-style: normal;
+}
+
+.prof-photo_add {
+	background-color: #f3f3f3;
+	width: 285px;
+	overflow: hidden;
+	margin-bottom: 22px;
+	text-align: center;
+	margin-right: 20px;
+}
+
+.prof-photo_add img {
+	display: block;
+	width: 100%;
+	position: relative;
+	z-index: 1;
+}
+
+.prof-photo_add #load-img_wrap:before {
+	width: 285px;
+	height: 100%;
+	z-index: 3;
+}
+
+.prof-rht .det-back {
+	font-size: 14px;
+}
+
+.prof-photo_add input {
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 30em;
+	cursor: pointer;
+	opacity: 0;
+	z-index: 3;
+}
+
+.prof-photo_add input:hover {
+	cursor: pointer;
+}
+
+.prof-photo_add_over {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 40px;
+	text-align: center;
+	font-size: 12px;
+	font-family: Arial;
+	background-color: #000;
+	opacity: 0.8;
+	z-index: 2;
+	display: block;
+}
+
+.prof-photo_add_over {
+	bottom: -40px;
+}
+
+.prof-photo_add .prof-photo_add_over span,
+.prof-photo_imgs_wrap .prof-photo_add_over span {
+	position: relative;
+	top: 15px;
+	color: #fff;
+}
+
+.prof-photo_add_cover {
+	background: url("../i/profile/icon-add-photo.gif") center center no-repeat;
+	height: 175px;
+}
+
+/* Переворачивание изображения */
+.prof-photo_imgs_wrap *,
+.ava-container *,
+.prof-photo_add * {
+	-webkit-transition: opacity 0.3s ease;
+	-moz-transition: opacity 0.3s ease;
+	transition: opacity 0.3s ease;
+
+	-webkit-transition: margin 0.3s ease;
+	-moz-transition: margin 0.3s ease;
+	transition: margin 0.3s ease;
+}
+
+.ava-container {
+	position: absolute;
+}
+
+.prof-photo_imgs_wrap .loader,
+.ava-container .loader,
+.prof-photo_add .loader {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -20px;
+	margin-top: -20px;
+	z-index: 10;
+}
+
+.ava-container .loader {
+	margin-top: -30px;
+}
+
+.prof-photo_imgs_wrap .loader-overlay,
+.ava-container .loader-overlay,
+.prof-photo_add .loader-overlay {
+	z-index: 5;
+	background: #fff;
+	opacity: 0.8;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+
+.prof-photo_imgs_wrap .rotate,
+.ava-container .rotate,
+.prof-photo_add .rotate {
+	width: 32px;
+	height: 32px;
+	position: absolute;
+	bottom: 0;
+	opacity: 0;
+}
+
+.ava-container .rotate {
+	bottom: 17px;
+}
+
+.prof-photo_add .rotate {
+	top: 5px;
+}
+
+.prof-photo_imgs_wrap:hover .rotate,
+.ava-container:hover .rotate,
+.prof-photo_add:hover .rotate {
+	z-index: 1000;
+	opacity: 0.5;
+	margin: 0;
+}
+
+.prof-photo_imgs_wrap .rotate:hover,
+.ava-container .rotate:hover,
+.prof-photo_add .rotate:hover {
+	opacity: 1;
+}
+
+.prof-photo_imgs_wrap .rotate-left,
+.ava-container .rotate-left,
+.prof-photo_add .rotate-left {
+	right: 5px;
+	margin: 0 -5px -5px 0;
+	background: url(../i/rotate-left.png) no-repeat left top;
+}
+
+.prof-photo_imgs_wrap .rotate-right,
+.ava-container .rotate-right,
+.prof-photo_add .rotate-right {
+	left: 5px;
+	margin: 0 0 -5px -5px;
+	background: url(../i/rotate-right.png) no-repeat left top;
+}
+
+.prof-photo_add .rotate-right {
+	top: 5px;
+}
+
+/* Переворачивание изображения */
+
+/* Обрезка изображений */
+.prof-photo_imgs_wrap .crop-image,
+.prof-photo_add .crop-image {
+	background: url(../i/crop-image.png) no-repeat left top;
+	width: 28px;
+	height: 28px;
+	position: absolute;
+	z-index: 100;
+	bottom: 20px;
+	margin-bottom: -20px;
+	left: 50%;
+	margin-left: -14px;
+	opacity: 0;
+}
+
+.prof-photo_imgs_wrap:hover .crop-image {
+	opacity: 0.7;
+	margin-bottom: 0;
+}
+
+.prof-photo_add:hover .crop-image {
+	opacity: 0.7;
+	top: 10px;
+}
+
+.prof-photo_imgs_wrap .crop-image:hover, .prof-photo_add .crop-image:hover {
+	opacity: 1;
+}
+#crop-window {
+	width: 860px;
+	height: 480px;
+	position: relative;
+}
+#crop-window .image-container {
+	width: 640px;
+}
+#crop-window .image {
+	max-width: 640px;
+	max-height: 480px;
+}
+#crop-window button {
+	position: absolute;
+	display: block;
+	right: 0;
+	bottom: 0;
+	border: 0;
+}
+.jcrop-holder #preview-pane {
+	display: block;
+	position: absolute;
+	z-index: 2000;
+	top: 0;
+	right: -220px;
+	padding: 6px;
+	border: 1px rgba(0,0,0,.4) solid;
+	background-color: white;
+
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+
+	-webkit-box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+}
+#preview-pane .preview-container {
+	width: 183px;
+	height: 118px;
+	overflow: hidden;
+}
+
+.appointment-metro-inp .jsonSuggest {
+	z-index: 1;
+}
+
+.appointment-metro-inp input {
+	position: relative;
+	z-index: 2;
+}
+
+.appointment-metro-inp .form-placeholder {
+	z-index: 3;
+}
+
+#appointment-form .form-inp-act {
+	z-index: 4;
+}
+/* Обрезка изображений */

@@ -1,0 +1,80 @@
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule . index.php [L]
+
+keepalive_timeout 70;
+
+# task #3266. Для загрузки больших картинок. Не смогли прописать отдельно для location
+client_max_body_size 512m;
+
+if ($host ~* www\.(.*)) {
+	set $host_without_www $1;
+	rewrite ^(.*)$ http://$host_without_www$1 permanent;
+}
+
+location ~ ^/(admin|login) {
+	if ( $scheme = "http" ) {
+		return 301 https://$http_host$request_uri;
+	}
+	try_files $uri $uri/ /index.php?$args;
+}
+
+
+
+location / {
+	try_files $uri $uri/ /index.php?$args;
+}
+
+# Преобразует ссылку для плагина загрузки изображений для редактора tinyMCE
+location /js/admin/tiny_mce/plugins/jbimages/ci/index.php {
+	try_files $uri $uri/ /js/admin/tiny_mce/plugins/jbimages/ci/index.php;
+}
+
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_URI} ^/upload
+#RewriteRule . index.php?r=site/error [L]
+
+location /upload {
+	try_files $uri $uri/ index.php?r=site/error;
+}
+
+#AddDefaultCharset UTF-8
+
+#Redirect 301 /master/ /masters/
+#Redirect 301 /salon/ /salons/
+#
+#
+#AddType text/x-component .htc
+#RewriteEngine On
+
+#RewriteRule (\.svn|\.project|\.settings|\.buildpath|\.externalBuilders|\.db) - [F]
+
+#RewriteBase /
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_URI} !^/(admin|api|upload|assets|i|css|js)
+#RewriteCond %{REQUEST_URI} !(.*)/$
+#RewriteRule ^(.*[^/])$ $1/ [L,R=301]
+#
+
+#RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+#RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+#AddType "text/css" .css
+#AddType "application/x-shockwave-flash" .swf
+
+#<Files ~ "\.(gif|jpe?g|png|js|css)$">
+#	SetOutputFilter DEFLATE
+#	FileETag All
+#</Files>
+#
+#<IfModule mod_expires.c>
+#	ExpiresActive On
+#	ExpiresByType "application/x-javascript" "access plus 1 week"
+#	ExpiresByType "application/x-shockwave-flash" "access plus 1 week"
+#	ExpiresByType "text/css" "access plus 1 week"
+#	ExpiresByType "image/jpeg" "access plus 1 week"
+#	ExpiresByType "image/png" "access plus 1 week"
+#	ExpiresByType "image/gif" "access plus 1 week"
+#	ExpiresByType "image/ico" "access plus 1 week"
+#</IfModule>

@@ -1,0 +1,50 @@
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `city_near_stations`
+--
+
+DROP TABLE IF EXISTS `city_near_stations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `city_near_stations` (
+  `city_id` int(11) NOT NULL,
+  `station_id` int(11) NOT NULL,
+  `priority` tinyint(3) NOT NULL,
+  PRIMARY KEY (`city_id`,`station_id`),
+  KEY `cns_station_id_idx` (`station_id`),
+  KEY `cns_priority` (`priority`),
+  CONSTRAINT `cns_city_id` FOREIGN KEY (`city_id`) REFERENCES `cities` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `cns_station_id` FOREIGN KEY (`station_id`) REFERENCES `underground_station` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `city_near_stations`
+--
+
+LOCK TABLES `city_near_stations` WRITE;
+/*!40000 ALTER TABLE `city_near_stations` DISABLE KEYS */;
+INSERT INTO `city_near_stations` VALUES (2,188,1),(3,41,1),(7,6,1),(8,160,1),(9,188,1),(11,186,1),(12,176,1),(13,26,1),(14,176,1),(15,190,1),(16,84,1),(18,6,1),(20,187,1),(21,190,1),(22,81,1),(23,81,1),(25,85,1),(26,26,1),(27,81,1),(29,188,1),(30,26,1),(31,188,1),(33,111,1),(34,176,1),(35,160,1),(38,188,1),(2,106,2),(3,98,2),(7,19,2),(8,25,2),(9,189,2),(11,84,2),(12,159,2),(13,158,2),(14,81,2),(15,189,2),(16,186,2),(18,19,2),(20,60,2),(21,189,2),(22,11,2),(23,11,2),(25,66,2),(26,158,2),(27,11,2),(29,90,2),(30,158,2),(31,90,2),(33,143,2),(34,106,2),(35,25,2),(38,90,2),(2,176,3),(3,183,3),(7,124,3),(8,158,3),(9,190,3),(11,111,3),(12,106,3),(13,25,3),(14,11,3),(15,76,3),(16,34,3),(18,111,3),(20,183,3),(21,37,3),(22,129,3),(23,129,3),(25,69,3),(26,25,3),(27,19,3),(29,107,3),(30,25,3),(31,37,3),(33,124,3),(34,159,3),(35,158,3),(38,37,3),(2,90,4),(3,60,4),(7,111,4),(8,161,4),(9,90,4),(11,34,4),(12,169,4),(13,160,4),(14,159,4),(15,187,4),(16,86,4),(18,124,4),(20,184,4),(21,127,4),(22,176,4),(23,19,4),(26,160,4),(27,129,4),(29,37,4),(30,160,4),(33,186,4),(34,44,4),(35,26,4),(38,107,4),(2,44,5),(3,184,5),(7,99,5),(8,24,5),(9,37,5),(11,143,5),(12,44,5),(13,161,5),(14,106,5),(15,37,5),(16,140,5),(18,81,5),(20,182,5),(21,188,5),(22,99,5),(23,6,5),(25,179,5),(26,161,5),(27,99,5),(29,106,5),(30,149,5),(33,84,5),(34,169,5),(35,161,5),(38,189,5),(2,107,6),(3,167,6),(7,143,6),(8,7,6),(9,127,6),(11,86,6),(12,105,6),(13,24,6),(14,129,6),(15,23,6),(16,156,6),(18,143,6),(20,41,6),(21,76,6),(22,22,6),(23,22,6),(25,133,6),(26,24,6),(27,176,6),(29,44,6),(30,181,6),(33,30,6),(34,105,6),(35,24,6),(38,127,6),(2,105,7),(3,7,7),(7,81,7),(8,183,7),(9,107,7),(11,156,7),(12,117,7),(13,191,7),(14,169,7),(15,79,7),(18,99,7),(20,190,7),(21,68,7),(22,159,7),(23,99,7),(25,110,7),(26,191,7),(27,22,7),(29,127,7),(30,93,7),(33,34,7),(34,188,7),(35,7,7),(38,106,7);
+/*!40000 ALTER TABLE `city_near_stations` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2014-08-25 16:24:39

@@ -1,0 +1,23 @@
+body {
+    color: #000000;
+    font-family: Georgia,Times New Roman;
+    font-size: 80%;
+    line-height: 17px;
+}
+
+p { margin: 0 0 14px; padding: 0; line-height: 17px;}
+
+.img-cont-l {
+	float: left;
+	margin: 4px 15px 15px 0;
+}
+.img-cont-r {
+	float: right;
+	margin: 4px 0px 15px 15px;
+}
+
+h1{margin:0 0 10px 0; font-weight:bold; font-size:19px; line-height: 1.15em;}
+
+h2{margin:30px 0 1em 0; font-weight:bold; font-size:18px; line-height: 1.2em;}
+
+h3, h4{color: #000; font-weight:bold; font-size:16px; line-height: 1.1em; margin:0 0 1em 0;}

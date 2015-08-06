@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="Likefifa" default="help">
+	<tstamp>
+		<format property="DATE" pattern="%Y%m%d-%H%M%S" />
+	</tstamp>
+	<property name="prod_dir_prefix" value="/var/local/code/${DATE}-${point}" />
+	<property name="dir_runtime" value="/var/log/likefifa/runtime" override="false" />
+	<property name="link_runtime" value="${dir_prefix}/protected/runtime" override="false" />
+	<property name="dir_upload" value="/mnt/likefifa-static/upload" override="false" />
+	<property name="link_upload" value="${dir_prefix}/upload" override="false" />
+	<property name="web_public" value="${dir_prefix}/" override="false" />
+	<property name="link_www" value="/var/www/likefifa.ru" override="false" />
+
+	<!-- ============================================  -->
+	<!-- Target: Создаём директории                    -->
+	<!-- ============================================  -->
+	<target name="create_dir">
+		<echo msg="Making directory ${dir_prefix}" />
+		<mkdir dir="${dir_prefix}" mode="0775" />
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: Копируем код из временной папки       -->
+	<!-- ============================================  -->
+	<target name="copy_dir" >
+		<copy todir="${dir_prefix}" >
+			<fileset dir="/var/local/likefifa.git/">
+				<exclude name="**/.git" />
+			</fileset>
+		</copy>
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: installl                              -->
+	<!-- ============================================  -->
+	<target name="install">
+		<phingcall target="mkdirs"/>
+		<phingcall target="migrate"/>
+		<phingcall target="clearcache"/>
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: Build                                 -->
+	<!-- ============================================  -->
+	<target name="build">
+		<property name="dir_prefix" value="${prod_dir_prefix}" />
+		<property name="type_config" value="production" />
+		<phingcall target="create_dir" />
+		<phingcall target="copy_dir" />
+		<exec command="cd ${prod_dir_prefix}" passthru="true" checkreturn="true"/>
+		<symlink target="../${type_config}/local.php" link="./protected/config/overall/local.php" overwrite="true" />
+		<phingcall target="mkdirs_build"/>
+		<phingcall target="migrate"/>
+		<phingcall target="clearcache"/>
+		<symlink target="${dir_upload}" link="${link_upload}" overwrite="false" />
+		<symlink target="${dir_runtime}" link="${link_runtime}" overwrite="false" />
+		<symlink target="${web_public}" link="${link_www}" overwrite="true" />
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: dev                                   -->
+	<!-- ============================================  -->
+	<target name="dev">
+		<property name="type_config" value="${env.LOGNAME}" />
+		<echo> Building ...... Dev ... ${env.LOGNAME} </echo>
+		<symlink target="../env/${type_config}/local.php" link="./protected/config/overall/local.php" overwrite="true" />
+		<phingcall target="install"/>
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: stage                                 -->
+	<!-- ============================================  -->
+	<target name="stage">
+		<property name="type_config" value="stage" />
+		<symlink target="../${type_config}/local.php" link="./protected/config/overall/local.php" overwrite="true" />
+		<phingcall target="install"/>
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: Создаём директории для боя            -->
+	<!-- ============================================  -->
+	<target name="mkdirs_build">
+		<echo msg="Making directories"/>
+		<mkdir dir="assets" mode="0775"/>
+		<mkdir dir="protected/assets" mode="0775"/>
+		<mkdir dir="sitemaps" mode="0775"/>
+		<mkdir dir="sitemaps/moscow" mode="0775"/>
+		<mkdir dir="sitemaps/mo" mode="0775"/>
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: Создаём директории                    -->
+	<!-- ============================================  -->
+	<target name="mkdirs">
+		<echo msg="Making directories"/>
+		<mkdir dir="assets" mode="0775"/>
+		<mkdir dir="protected/assets" mode="0775"/>
+		<mkdir dir="protected/runtime" mode="0775"/>
+		<mkdir dir="sitemaps" mode="0775"/>
+		<mkdir dir="sitemaps/moscow" mode="0775"/>
+		<mkdir dir="sitemaps/mo" mode="0775"/>
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: update                                -->
+	<!-- ============================================  -->
+	<target name="migrate">
+		<echo>Apply migrations</echo>
+		<exec command="php ./protected/yiic.php migrate --interactive=0" passthru="true" checkreturn="true"/>
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: ClearCache                            -->
+	<!-- ============================================  -->
+	<target name="clearcache">
+		<echo>ClearCache Redis</echo>
+		<exec command="php ./protected/yiic.php ClearCache" passthru="true" checkreturn="true"/>
+	</target>
+
+
+	<!-- ============================================  -->
+	<!-- Target: help                                  -->
+	<!-- ============================================  -->
+	<target name="help">
+		<echo>
+			Usage:
+
+			help    - this message
+			install - setup application
+			dev     - setup dev application
+			stage   - setup stage application
+			build   - setup prod application
+
+		</echo>
+	</target>
+</project>

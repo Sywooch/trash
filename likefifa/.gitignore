@@ -1,0 +1,22 @@
+.htaccess
+.idea
+.project
+.settings
+/assets
+sitemap*.xml
+upload
+composer.lock
+
+# Папку и ее контент создает composer
+/components
+
+protected/config/overall/local.php
+protected/config/overall/localTest.php
+
+protected/assets
+protected/runtime
+protected/vendors
+
+protected/data/schema.mysql.sql
+
+/node/node_modules/*

@@ -1,0 +1,109 @@
+body {
+	font-size: 80%;
+	font-family: Georgia, Times New Roman;
+	background: #fff url("../i/bg.gif") repeat-x;
+	margin: 0px;
+	padding: 0px;
+	color: #000;
+	line-height: 1;
+}
+
+body, html {
+	height: 100%;
+}
+
+html {
+	overflow-y: scroll;
+}
+
+form, div, table, tr, td, ul, ol, li {
+	margin: 0px;
+	padding: 0px;
+}
+
+input, textarea, select {
+	margin: 0px;
+	outline: none;
+	font-family: Georgia, Times New Roman;
+	font-size: 1em;
+}
+
+td {
+	vertical-align: middle;
+}
+
+ul, ol {
+	margin: 0 0 0 20px;
+	padding: 0px;
+}
+
+ul li, ol li {
+	margin-bottom: 10px;
+}
+
+p {
+	margin: 0 0 14px;
+	line-height: 15px;
+}
+
+a {
+	color: #0082cb;
+	outline: none;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #c04496;
+}
+
+h1 {
+	margin: 0 0 10px 0;
+	font-weight: bold;
+	font-size: 19px;
+	line-height: 1.15em;
+}
+
+h2 {
+	margin: 30px 0 1em 0;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 1.2em;
+}
+
+h3 {
+	color: #000;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 1.1em;
+	margin: 0 0 1em 0;
+}
+
+img {
+	border: 0px;
+}
+
+.clearfix {
+	clear: both;
+	overflow: hidden;
+	height: 0px;
+	line-height: 0px;
+	float: none !important;
+	font-size: 0px;
+	padding: 0px !important;
+	margin: 0px !important;
+	background: none !important;
+}
+
+.img-cont-l {
+	float: left;
+	margin: 4px 15px 15px 0;
+}
+
+.img-cont-r {
+	float: right;
+	margin: 4px 0px 15px 15px;
+}
+
+.black {
+	color: black;
+}
