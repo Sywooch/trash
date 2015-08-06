@@ -1,0 +1,1 @@
+DdTriggerEvent(document, "Request_created_<?=$this->id?>", <?php echo json_encode(['status' => $this->getCreateRequestStatus(), 'template'=> $this->srcTemplate]); ?>);

@@ -1,0 +1,1 @@
+DdTriggerEvent(document, "<?php echo $id;?>_load", <?php echo $content; ?>);
