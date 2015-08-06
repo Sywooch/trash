@@ -1,0 +1,28 @@
+User-agent: *
+
+Disallow: /admin/
+Disallow: /page/
+Disallow: /kliniki*page/
+Disallow: */order/
+Disallow: /select_doctor?*
+Disallow: /opinion/
+Disallow: /article/index
+Disallow: /search
+Disallow: /sector
+Disallow: /library_new
+Disallow: /article
+Disallow: /js
+Disallow: */near/
+Disallow: /*?station*
+Disallow: /rewriteName/
+Disallow: /docdoc/
+Disallow: */stations*
+Disallow: /library/*/page
+Disallow: /library/*/na-dom
+Disallow: /library/podgotovka-k-uzi-malogo-taza
+Disallow: /landing/
+Disallow: /context/
+Disallow: &id=*
+Disallow: *?PHPSESSID=*
+
+Host: m.docdoc.ru

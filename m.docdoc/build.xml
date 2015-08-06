@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="ProjectTemplate" default="help">
+	<property name="base_dir" value="./" override="false"/>
+	<property name="public_dir" value="public/" override="false"/>
+
+	<target name="mkdirs">
+		<echo msg="Making directorys"/>
+
+		<mkdir dir="${base_dir}/runtime" mode="0775"/>
+		<mkdir dir="${public_dir}/assets" mode="0775"/>
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: ClearCache                            -->
+	<!-- ============================================  -->
+	<target name="clearcache">
+		<echo>Clear Redis Cache</echo>
+		<property name="dir_prefix" value="${project.basedir}" />
+		<exec command="./yiic ClearCache" passthru="true" checkreturn="true" dir="${dir_prefix}" />
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: install                               -->
+	<!-- ============================================  -->
+	<target name="install">
+		<phingcall target="mkdirs"/>
+		<phingcall target="clearcache"/>
+	</target>
+
+	<target name="help">
+		<echo>
+			Usage:
+
+			help              - this message
+			install           - setup application
+			clearcache        - сlear redis cache
+		</echo>
+	</target>
+</project>

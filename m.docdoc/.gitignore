@@ -1,0 +1,11 @@
+.idea
+composer.lock
+
+# Папку и ее контент создает composer
+/vendor
+
+/runtime
+/public/assets
+
+# Ссылка на локальный конфиг
+configName.txt

@@ -1,0 +1,21 @@
+{
+	"autoload": {
+		"psr-4": {
+			"dfs\\": ""
+		}
+	},
+	"require": {
+		"yiisoft/yii": "1.1.*",
+		"yiisoft/jquery": "2.*",
+		"phing/phing": "2.*",
+		"mixpanel/mixpanel-php": "2.*",
+		"dfs/common": "dev-master",
+		"yriveiro/php-fslock": "dev-master"
+	},
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "git@bitbucket.org:dfsru/dfs_common.git"
+		}
+	]
+}
