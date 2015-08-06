@@ -1,0 +1,47 @@
+AddDefaultCharset UTF-8
+
+Redirect 301 /master/ /masters/
+Redirect 301 /salon/ /salons/
+
+
+AddType text/x-component .htc
+RewriteEngine On
+
+RewriteRule (\.svn|\.project|\.settings|\.buildpath|\.externalBuilders|\.db) - [F]
+
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !^/(admin|api|upload|assets|i|css|js)
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteRule ^(.*[^/])$ $1/ [L,R=301] 
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} ^/upload
+RewriteRule . index.php?r=site/error [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php [L]
+
+RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+AddType "text/css" .css
+AddType "application/x-shockwave-flash" .swf
+
+<Files ~ "\.(gif|jpe?g|png|js|css)$">
+    SetOutputFilter DEFLATE
+	FileETag All
+</Files>
+
+<IfModule mod_expires.c>
+	ExpiresActive On
+	ExpiresByType "application/x-javascript" "access plus 1 week"
+	ExpiresByType "application/x-shockwave-flash" "access plus 1 week"
+	ExpiresByType "text/css" "access plus 1 week"
+	ExpiresByType "image/jpeg" "access plus 1 week"
+	ExpiresByType "image/png" "access plus 1 week"
+	ExpiresByType "image/gif" "access plus 1 week"
+	ExpiresByType "image/ico" "access plus 1 week"
+</IfModule>
