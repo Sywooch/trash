@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+ssh sel-web3.docdoc.pro "~/docdoc/phpunit --configuration ~/docdoc/phpunit.xml $*"

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+ROOT_PATH=$(cd $(dirname $0) && pwd)
+
+#start xdebuger
+export XDEBUG_CONFIG=''
+
+#значением hostname должен быть обозван сервер в конфиге phpstorm
+export PHP_IDE_CONFIG="serverName=`hostname`"
+
+#вызываю родной yiic
+CMD="${ROOT_PATH}/yiic $@"
+
+$CMD

@@ -1,0 +1,66 @@
+.overlay { 
+		width:100%;
+		height:100%;
+		position:fixed;
+		left:0px;
+		top:0px;
+		z-index:50;
+		background:url(/img/common/overlay.png);
+		display:none
+}
+#PopupOverlay{
+	z-index:55;
+}
+#PopupIn{
+	background:#fff;
+	position:absolute;
+	left:50%;
+	z-index:56;
+	padding:20px;
+}
+
+#popupOK{
+	width:396px;
+	padding:29px 43px;
+}
+#popupEnterAndReg{
+	width:642px;
+}
+#popupEnterAndReg .leftColReg{
+	width:293px;
+	background:#fff;
+	padding:30px 33px 30px 34px;
+}
+#popupEnterAndReg .rightColReg{
+	background:#eec9f4;
+	padding-left:15px;
+}
+
+
+
+
+
+
+#PopupH1{
+	padding-bottom:13px;
+}
+#PopupText{
+	color:#969199;
+	font-size:12px;
+}
+#PopupText a{
+	color:#333;
+}
+#PopupText a:hover{
+	text-decoration:none;
+	color:#ed1e79;
+}
+#popupOK div.otbivka{
+	height:71px;
+	background:url(/img/for-content/otbivka.gif) repeat-x bottom;
+}
+#Popup div#popupButton{
+	width:112px;
+	margin:29px auto 0 auto;
+	float:none;
+}

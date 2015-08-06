@@ -1,0 +1,19 @@
+h3{line-height:1;}
+
+#header, .result .result-head, .result .result-item .time, .echo, .content-right, .reg-inf, .registration, .pict, .inp, .page-help .item {zoom:1;}
+
+#overlayPopup{position:absolute;}
+
+.doc-opinion .time span {margin-top: 0;}
+.content-right .right-item .bottom {width:100%;}
+
+.result .result-head .sort {margin-top: 0;}
+.result .result-head .sort ul li {width: 90px; padding-right:3px; padding-top: 5px;}
+.result .result-head {padding-bottom: 8px;}
+#departure-filter input {margin-top: -3px;}
+
+.pager .yiiPager .previous a,
+.pager .yiiPager .next a {font-size: 22px;}
+.pager .yiiPager .page {padding-top: 0px; margin-top: -1px;}
+
+.result .echo .all-list {width: 123px; padding-top: 5px;}

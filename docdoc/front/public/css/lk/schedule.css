@@ -1,0 +1,136 @@
+.schedule-params {
+	width:900px;
+	height:255px;
+
+}
+
+.schedule-params-cont {
+	width:420px;
+	float:left;
+}
+
+.schedule-params-cont h2 {
+	line-height:20px;
+	margin-bottom:15px;
+	font-weight: bold;
+}
+
+.schedule-params-cont .button_lk {
+	margin-top: 15px;
+
+}
+
+.schedule-alert {
+	display:none;
+	margin-top:10px;
+	background-color: #FCF8E3;
+	border-color: #FAEBCC;
+	color: #8A6D3B;
+	border-radius: 4px;
+	margin-bottom: 20px;
+	padding: 15px;
+	width:900px;
+}
+
+.schedule-alert > div {
+	margin-top:10px;
+}
+
+.schedule-alert #cancelChangeDuration {
+	float:right;
+}
+
+.schedule-rule {
+}
+
+.schedule-rule > div {
+	clear: both;
+	padding: 15px 0px;
+}
+
+.schedule-rule label {
+	float: left;
+	width: 200px;
+	padding: 6px;
+}
+
+.controls {
+	float: left;
+}
+
+.schedule-filter-days li {
+	list-style: none;
+	float: left;
+	width: 25px;
+	text-align: center;
+}
+
+.schedule-filter-start-day {
+	width: 100px;
+}
+
+.schedule-filter-time {
+	width: 60px;
+}
+
+.fc-event {
+	background: #29AAAC !important;
+	border-color: #008f91 !important;
+}
+
+.fc-event-time, .fc-event-inner {
+	text-align: center;
+	font-weight: bold;
+}
+
+.past-day {
+	background: #f7f7f7 !important;
+}
+
+.past-event {
+	background: #c0c0c0 !important;
+	color: #444 !important;
+	border-color: #b0b0b0 !important;
+	opacity: 0.5
+}
+
+.past-event .ui-resizable-handle {
+	display: none !important;
+}
+
+.fc-sun {
+	color: red;
+}
+
+.fc-sat {
+	color: red;
+}
+
+.fc-view-month .fc-event-inner {
+	height: 30px;
+}
+
+.fc-delete-button {
+	margin: 1px 2px 1px 2px;
+
+	outline: 0 none;
+	border-radius: 3px;
+	border: 1px solid #ddd;
+	font-size: 10px;
+	line-height: 1;
+	padding: 0px 1px;
+	background-color: #29AAAC;
+	color: #FFFFFF;
+	cursor: pointer;
+	right: 0;
+	position: absolute;
+}
+
+.fc-month-view {
+	width: 40px;
+	height: 25px;
+}
+
+.hide-copy-params .copy-param {
+	display: none;
+}

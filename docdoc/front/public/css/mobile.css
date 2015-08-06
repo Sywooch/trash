@@ -1,0 +1,119 @@
+h1, .h1 {
+    font-size: 26px;
+    font-size: 2.6rem;
+}
+
+/* mobile specific */
+ .search_input{
+    background-color: #fff;
+}
+
+ .search_list_spec,  .search_list_metro {
+    margin-left: -45px;
+}
+
+ i.js-popup-tr {
+    display: none;
+}
+
+ .header_contact_title {
+	font-size: 18px;
+	font-size: 1.8rem;
+}
+/* mobile specific end */
+
+.search_input {
+    vertical-align: top;
+}
+
+.search_input_imit {
+    position: relative;
+}
+
+.m-simple .search_input_imit .search_input {
+    display: inline-block;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    opacity: 0;
+}
+
+/* prevent header elements to be placed in more than one line */
+.l-header {
+    white-space: nowrap;
+}
+
+/* doctor_list, improving readability */
+.filter_list {
+    font-size: 20px;
+    font-size: 2rem;
+    line-height: 20px;
+    max-height: 10000em;
+}
+.filter_item {
+    display: inline;
+}
+
+.doctor_card,
+.context_list,
+.context_title {
+    font-size: 20px;
+    font-size: 2rem;
+}
+.doctor_card,
+.context_list {
+    max-height: 10000em;
+}
+.doctor_info,
+.doctor_desc,
+.t-fs-s,
+.t-fs-xs {
+    font-size: 22px;
+    font-size: 2.2rem;
+}
+.request_tel,
+.request_tel_number {
+    font-size: 20px;
+    font-size: 2rem;
+}
+.reviews_count,
+.doctor_rating_disclaimer {
+    font-size: 18px;
+    font-size: 1.8rem;
+}
+.nearest_doctors_item .reviews_count,
+.nearest_doctors_item .doctor_rating_disclaimer {
+    font-size: 12px;
+    font-size: 1.2rem;
+}
+.t-fs-n {
+    font-size: 24px;
+    font-size: 2.4rem;
+}
+.doctor_name {
+    font-size: 28px;
+    font-size: 2.8rem;
+    line-height: 29px;
+}
+.doctor_name_word {
+    font-size: 32px;
+    font-size: 3.2rem;
+}
+.doctor_card:hover {
+    background-color: transparent;
+    border-color: #e6e6e6;
+}
+.action_550_form_head {
+    font-size: 20px;
+    font-size: 2rem;
+}
+.nearest_doctors_cont:hover {
+    background-color: transparent;
+    border-color: #e6e6e6;
+}
+.js-ymap-zoom {
+    display: none;
+}
+.clinic_card_doctors_select_ico {
+    display: none;
+}

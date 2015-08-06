@@ -1,0 +1,36 @@
+{
+  "jsonrpc": 2.0,
+  "result": [
+    {
+      "resourceId": "abc87",
+      "resourceType": "doctor",
+      "clinicId": "external_id123",
+      "name": "Сидоров"
+    },
+    {
+      "resourceId": "abc87",
+      "resourceType": "doctor",
+      "clinicId": "external_id234",
+      "name": "Иванов"
+    },
+    {
+      "resourceId": "external_id_1",
+      "resourceType": "doctor",
+      "clinicId": "external_id567",
+      "name": "Николаев Петр Петрович"
+    },
+    {
+      "resourceId": "1",
+      "resourceType": "diagnostic",
+      "clinicId": "external_id234",
+      "name": "Кабинет №1"
+    },
+    {
+      "resourceId": "2",
+      "resourceType": "",
+      "clinicId": "external_id234",
+      "name": "Швабра(как оно сюда попало хз)"
+    }
+  ],
+  "id": "abc"
+}

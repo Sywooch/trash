@@ -1,0 +1,156 @@
+
+#metro_lines {
+    float: right;
+    padding-top: 33px;
+    width: 175px;
+}
+#metro_lines .head {
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 15px;
+    margin-bottom: 15px;
+}
+#metro_lines a {
+    cursor: pointer;
+    display: block;
+    font-size: 10px;
+    margin-bottom: 10px;
+    outline: medium none;
+    padding-left: 29px;
+    text-transform: uppercase;
+}
+#metro_lines a.act {
+    font-weight: bold;
+}
+#metro_lines i {
+    background: url("/img/common/lines.gif") no-repeat scroll 0 0 transparent;
+    display: block;
+    float: left;
+    height: 9px;
+    margin-top: 2px;
+    overflow: hidden;
+    width: 21px;
+}
+#map_moscow {
+    margin: 0 0 0 8px;
+    position: relative;
+    width: 610px;
+}
+#map_stations {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+#map_stations div {
+    cursor: pointer;
+    height: 11px;
+    position: absolute;
+    width: 11px;
+}
+#map_stations div.act {
+    background: url("/img/common/station_act.gif") no-repeat scroll 0 0 transparent;
+}
+#metro-clear-act {
+    display: none;
+    font-size: 10px;
+    margin: 0 0 15px !important;
+    padding: 0 !important;
+    text-transform: uppercase;
+}
+#select-stations {
+    color: #000000;
+    display: none;
+    font-size: 10px;
+    line-height: 13px;
+    margin-bottom: 8px;
+    max-height: 225px;
+    overflow: hidden;
+    padding-top: 4px;
+    position: relative;
+    text-transform: capitalize;
+}
+#select-stations div {
+    margin-top: 5px;
+}
+#stations-select-count {
+    color: #00898B;
+    font-weight: normal;
+}
+.hidden {
+    display: none;
+}
+.list-areas {
+    float: left;
+    margin: 30px;
+}
+.map-select {
+    border: 1px solid #29AAAC;
+    border-radius: 6px 0 0 6px;
+}
+.map-select {
+    width: 200px;
+}
+#area-submit {
+    float: right;
+}
+.change-area {
+    margin: 20px;
+}
+.link-map {
+    background-color: #29AAAC;
+    border: 1px solid #00898B;
+    border-radius: 6px 6px 6px 6px;
+    color: #FFFFFF;
+    display: block;
+    float: left;
+    font-weight: bold;
+    height: 18px;
+    margin-left: 15px;
+    padding-top: 3px;
+    text-align: center;
+    text-decoration: none;
+    width: 120px;
+}
+.change-area label {
+    vertical-align: top;
+}
+
+
+
+
+
+
+/* map */
+.metro-map {float:left; position:relative;}
+#metro_lines{float:right; width:175px; padding-top:33px; padding-left: 5px;}
+#metro_lines .head{font-size:20px; font-family:Calibri, Arial; margin-bottom:15px; font-weight:bold; line-height:15px;}
+#metro_lines a{cursor:pointer; margin-bottom:10px; text-transform:uppercase; font-size:10px; display:block; padding-left:29px; outline:none;}
+#metro_lines a.act{font-weight:bold;}
+#map_moscow{position:relative; width:610px; margin:0 0 0 8px;}
+#map_spb{height:580px; }
+.metro-map .map-image{z-index:2;}
+#map_stations{position:absolute; z-index:1; top:0px; left:0px; width:100%; height:100%;}
+#map_stations div{position:absolute; height:11px; width:11px; cursor:pointer;}
+#map_spb #map_stations .title:hover{border-bottom:1px solid #00898B;}
+#map_spb #map_stations .title.act{background-color:#ffba18; background-image:none; z-index:1; opacity:0.4;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=40);
+}
+#metro-clear-act{font-size:10px; text-transform:uppercase; margin: 0 0 15px 0 !important; padding:0 !important; display:none;}
+#select-stations{position:relative; overflow:hidden; max-height:225px; font-size: 10px; line-height: 13px; text-transform: uppercase; color:#000; padding-top:4px; margin-bottom:8px; display:none;}
+#select-stations div{margin-top:5px;}
+#stations-select-count{color:#00898B; font-weight:normal;}
+
+.hidden{display:none;}
+.list-areas{float:left;margin:30px;}
+.map-select{border:1px solid #29AAAC; border-radius: 6px 0px 0px 6px;}
+.map-select{width:200px;}
+#area-submit{float:right;}
+.change-area{margin:20px;}
+.link-map{display:block; float:left; width:120px; height:18px; margin-left:15px; padding-top:3px; color:#fff; background-color:#29AAAC; border:1px solid #00898B; border-radius:6px; text-decoration:none; font-weight:bold; text-align:center;}
+.change-area label{vertical-align:top;}
+
+/* map */

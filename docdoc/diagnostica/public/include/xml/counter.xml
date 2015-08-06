@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Counter>
+	<Center>
+		<Count>210</Count>
+		<Digits>
+			<Element>2</Element>
+			<Element>1</Element>
+			<Element>0</Element>
+		</Digits>
+	</Center>
+	<Employer>
+		<Count>21171</Count>
+		<Digits>
+			<Element>2</Element>
+			<Element>1</Element>
+			<Element>1</Element>
+			<Element>7</Element>
+		<Element>1</Element></Digits>
+	</Employer>
+	<LastModify>12.04.2013 00:00</LastModify>
+</Counter>

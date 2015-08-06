@@ -1,0 +1,35 @@
+SHELL=/bin/bash
+PATH="/var/local/php/bin:/var/local/php/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:$PATH"
+PATH_TO_CRON="/var/www/docdoc/back/public/service/crone"
+PATH_TO_CRON_LOG="/var/log/docdoc/cron"
+PATH_TO_YIIC="/var/www/docdoc"
+
+MAILTO=""
+
+# m h  dom mon dow   command
+
+
+*/1 * * * * docdoc $PATH_TO_YIIC/php-console $PATH_TO_CRON/updateRequestForPartners.php 2>&1 >> $PATH_TO_CRON_LOG/updateRequestForPartners.log
+*/1 * * * * docdoc $PATH_TO_YIIC/php-console $PATH_TO_CRON/senderSMS.php 2>&1 >> $PATH_TO_CRON_LOG/senderSMS.log
+*/2 * * * * docdoc $PATH_TO_YIIC/php-console $PATH_TO_CRON/senderEmail.php  2>&1 >> $PATH_TO_CRON_LOG/senderEmail.log
+*/5 * * * * docdoc $PATH_TO_YIIC/php-console $PATH_TO_CRON/updateStatusPartnerRequests.php 2>&1 >> $PATH_TO_CRON_LOG/updateStatusPartnerRequests.log
+
+# генерация feed.xml
+30 23 * * * docdoc $PATH_TO_YIIC/php-console $PATH_TO_CRON/feed.php 2>&1 >> $PATH_TO_CRON_LOG/feed.log
+
+# генерация feed.xml для 2gis
+35 23 * * * docdoc $PATH_TO_YIIC/yiic partnerfeed 2gis 2>&1 >> $PATH_TO_CRON_LOG/2gis_feed.log
+
+# генерация фида YML
+15 6 * * * docdoc $PATH_TO_YIIC/yiic partnerfeed yml --cityName=msk 2>&1 >> $PATH_TO_CRON_LOG/partnerfeed_yml_msk.log
+
+# Расчет CTR для клиник
+0 2 * * * docdoc $PATH_TO_YIIC/php-console $PATH_TO_CRON/CTRForClinic.php 2>&1 >> $PATH_TO_CRON_LOG/CTRForClinic.log
+
+#RequestRecords load/insert/parse/convert to mp3
+*/1 * * * * docdoc $PATH_TO_YIIC/yiic records load 2>&1 >> $PATH_TO_CRON_LOG/records_load.log
+*/3 * * * * docdoc $PATH_TO_YIIC/yiic records parse 2>&1 >> $PATH_TO_CRON_LOG/records_parse.log
+*/2 * * * * docdoc $PATH_TO_YIIC/yiic records convert 2>&1 >> $PATH_TO_CRON_LOG/records_convert.log
+
+#RequestRecords setDuration
+*/10 * * * * docdoc $PATH_TO_YIIC/yiic records setduration 2>&1 >> $PATH_TO_CRON_LOG/records_setduration.log

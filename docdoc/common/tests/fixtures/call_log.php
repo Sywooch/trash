@@ -1,0 +1,150 @@
+<?php
+return
+	json_decode(
+		'[
+		 {
+		  "id": 7545,
+		  "ext_id": "383194457",
+		  "start_time": "2014-07-12 09:11:46.0",
+		  "duration": "00:00:39",
+		  "ani": "79652999494",
+		  "did": "74952552748",
+		  "tariff_duration": "00:00:39",
+		  "tariff": 0,
+		  "cost": 0,
+		  "application_type_id": "1",
+		  "sort": "1"
+		 },
+		 {
+		  "id": 7546,
+		  "ext_id": "383194701",
+		  "start_time": "2014-02-05 09:49:47.0",
+		  "duration": "00:03:45",
+		  "ani": "79163000482",
+		  "did": "74951234567",
+		  "tariff_duration": "00:03:45",
+		  "tariff": 0,
+		  "cost": 0,
+		  "application_type_id": "1",
+		  "sort": "1"
+		 },
+		 {
+		  "id": 7547,
+		  "ext_id": "383197622",
+		  "start_time": "2014-07-12 09:26:15.0",
+		  "duration": "00:01:26",
+		  "ani": "79257037675",
+		  "did": "74952369859",
+		  "tariff_duration": "00:01:26",
+		  "tariff": 0,
+		  "cost": 0,
+		  "application_type_id": "1",
+		  "sort": "1"
+		 },
+		 {
+		  "id": 7548,
+		  "ext_id": "383203183",
+		  "start_time": "2014-07-12 09:52:42.0",
+		  "duration": "00:01:07",
+		  "ani": "79254161154",
+		  "did": "74952369859",
+		  "tariff_duration": "00:01:07",
+		  "tariff": 0,
+		  "cost": 0,
+		  "application_type_id": "1",
+		  "sort": "1"
+		 },
+		 {
+		  "id": 7549,
+		  "ext_id": "383207209",
+		  "start_time": "2014-07-12 10:07:36.0",
+		  "duration": "00:04:21",
+		  "ani": "79165709882",
+		  "did": "74993721690",
+		  "tariff_duration": "00:04:21",
+		  "tariff": 0,
+		  "cost": 0,
+		  "application_type_id": "1",
+		  "sort": "1"
+		 },
+		 {
+		  "id": 7550,
+		  "ext_id": "383209024",
+		  "start_time": "2014-07-12 10:12:09.0",
+		  "duration": "00:01:09",
+		  "ani": "79269036477",
+		  "did": "74993720753",
+		  "tariff_duration": "00:01:09",
+		  "tariff": 0,
+		  "cost": 0,
+		  "application_type_id": "1",
+		  "sort": "1"
+		 },
+		 {
+		  "id": 7551,
+		  "ext_id": "383209170",
+		  "start_time": "2014-07-12 10:12:27.0",
+		  "duration": "00:00:59",
+		  "ani": "79255186825",
+		  "did": "74993721690",
+		  "tariff_duration": "00:00:59",
+		  "tariff": 0,
+		  "cost": 0,
+		  "application_type_id": "1",
+		  "sort": "1"
+		 },
+		 {
+		  "id": 7552,
+		  "ext_id": "383212696",
+		  "start_time": "2014-07-12 10:20:52.0",
+		  "duration": "00:03:12",
+		  "ani": "79015176517",
+		  "did": "74993721690",
+		  "tariff_duration": "00:03:12",
+		  "tariff": 0,
+		  "cost": 0,
+		  "application_type_id": "1",
+		  "sort": "1"
+		 },
+		 {
+		  "id": 7553,
+		  "ext_id": "383213876",
+		  "start_time": "2014-07-12 10:24:00.0",
+		  "duration": "00:02:05",
+		  "ani": "74957032131",
+		  "did": "74993721766",
+		  "tariff_duration": "00:02:05",
+		  "tariff": 0,
+		  "cost": 0,
+		  "application_type_id": "1",
+		  "sort": "1"
+		 },
+		 {
+		  "id": 7554,
+		  "ext_id": "383214119",
+		  "start_time": "2014-07-12 10:24:49.0",
+		  "duration": "00:01:30",
+		  "ani": "79015176517",
+		  "did": "74993721697",
+		  "tariff_duration": "00:01:30",
+		  "tariff": 0,
+		  "cost": 0,
+		  "application_type_id": "1",
+		  "sort": "1"
+		 },
+		 {
+		  "id": 7555,
+		  "ext_id": "383215004",
+		  "start_time": "2014-07-12 10:27:05.0",
+		  "duration": "00:01:53",
+		  "ani": "79015176517",
+		  "did": "74952369859",
+		  "tariff_duration": "00:01:53",
+		  "tariff": 0,
+		  "cost": 0,
+		  "application_type_id": "1",
+		  "sort": "1"
+		 }
+		]',
+		true
+	);

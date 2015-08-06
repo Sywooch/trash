@@ -1,0 +1,39 @@
+{
+    "jsonrpc": 2.0,
+    "result":[
+        {
+            "resourceId" : "external_clinic_id_3123121212312312#doc_external_id_1",
+            "slotId"     : "uuid1",
+            "attributes" : {
+                "from" : "2030-01-01 10:00",
+                "to"   : "2030-01-01 10:30"
+            }
+        },
+        {
+            "resourceId" : "external_clinic_id_3123121212312312#doc_external_id_1",
+            "slotId"     : "external_clinic_id_3123121212312312#slot_id_9",
+            "attributes" : {
+                "from" : "2030-01-01 11:00",
+                "to"   : "2030-01-01 11:30"
+            }
+        },
+        {
+            "resourceId" : "external_clinic_id_3123121212312312#doc_external_id_1",
+            "slotId"     : "external_clinic_id_3123121212312312#slot_id_10",
+            "attributes" : {
+                "from" : "2030-01-01 12:00",
+                "to"   : "2030-01-01 12:30"
+            }
+        },
+        {
+            "resourceId" : "external_clinic_id_3123121212312312#doc_external_id_1",
+            "slotId"     : "external_clinic_id_3123121212312312#slot_id_11",
+            "attributes" : {
+                "from" : "2030-01-01 13:00",
+                "to"   : "2030-01-01 13:30"
+            }
+        }
+
+    ],
+    "id": "abc"
+}

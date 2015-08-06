@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+.card-hold {
+	margin-top: 0;
+	overflow: visible;
+}
+
+.card:after,
+.folio-link:before,
+.folio-link:after,
+.card-shad {
+	display: none;
+}
+
+.card {
+	box-shadow: 0 10px 10px #53610d;
+	top: 0;
+}
+
+.card .bg {
+	padding-bottom: 20px;
+}
+
+.folio-link {
+	padding-left: 10px;
+	padding-bottom: 10px;
+	padding-right: 10px;
+	background: #fff;
+	border: 1px solid #b5bdb3;
+	border-bottom-color: #899088;
+	border-top: 0;
+}

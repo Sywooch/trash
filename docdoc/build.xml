@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="docdoc" basedir="." default="help">
+	<property name="stage_dir_prefix" value="/var/www/docdoc" />
+	<property name="pseudo_dir_prefix" value="/var/local/docdoc.git_pseudo" />
+	<property name="prod_dir_prefix" value="" />
+	<property name="ini_file_name" value="${dir_prefix}/${project}/public/.user.ini"/>
+
+	<!-- ============================================  -->
+	<!-- Пути к конфигам для common                    -->
+	<!-- ============================================  -->
+	<property name="common_config" value="${dir_prefix}/common/config/${type_config}/local.php" override="false" />
+	<property name="common_link" value="${dir_prefix}/common/config/overall/local.php" override="false" />
+	<property name="common_test_config" value="${dir_prefix}/common/config/${type_config}/test.php" override="false" />
+	<property name="common_test_link" value="${dir_prefix}/common/config/overall/test.php" override="false" />
+	<property name="common_static" value="${dir_prefix}/static/public" override="false" />
+
+	<property name="common_runtime" value="/static/common/runtime" override="false" />
+	<property name="link_common_runtime" value="${dir_prefix}/common/runtime" override="false" />
+	<property name="runtime" value="/static/${project}.docdoc.ru/runtime" override="false" />
+	<property name="link_runtime" value="${dir_prefix}/${project}/runtime" override="false" />
+	<property name="static_common" value="/static/common" override="false" />
+	<property name="log" value="/var/log/docdoc/${project}.docdoc.ru" override="false" />
+	<property name="link_log" value="${dir_prefix}/${project}/public/log" override="false" />
+	<property name="_reports" value="/static/${project}.docdoc.ru/_reports" override="false" />
+	<property name="link_reports" value="${dir_prefix}/${project}/public/_reports" override="false" />
+	<property name="feed" value="/static/${project}.docdoc.ru/feed.xml" override="false" />
+	<property name="link_feed" value="${dir_prefix}/${project}/public/feed.xml" override="false" />
+	<property name="cronconf" value="/static/${project}.docdoc.ru/include/cronConf" override="false" />
+	<property name="link_cronconf" value="${dir_prefix}/back/public/include/cronConf" override="false" />
+	<property name="front_log" value="/var/log/docdoc/${project}.docdoc.ru" override="false" />
+	<property name="link_front_log" value="${dir_prefix}/${project}/public/log" override="false" />
+	<property name="upload" value="/static/${project}.docdoc.ru/upload" override="false" />
+	<property name="link_upload" value="${dir_prefix}/${project}/public/upload" override="false" />
+	<property name="front_lk_reports" value="/static/${project}.docdoc.ru/lk/_reports" override="false" />
+	<property name="link_lk_reports" value="${dir_prefix}/${project}/public/lk/_reports" override="false" />
+	<property name="cron_legacy" value="${dir_prefix}/back/cronLegacy/cronConf" override="false" />
+	<property name="cron_SMSquery" value="${dir_prefix}/back/cronLegacy/SMSquery.conf" override="false" />
+	<property name="cron_croneLock" value="${dir_prefix}/back/cronLegacy/croneLock.conf" override="false" />
+	<property name="dst_cron_SMSquery" value="${dir_prefix}/back/public/include/SMSquery.conf" override="false" />
+	<property name="dst_cron_croneLock" value="${dir_prefix}/back/public/include/croneLock.conf" override="false" />
+	<property name="web_public" value="${dir_prefix}/" override="false" />
+	<property name="link_www" value="/var/www/docdoc" override="false" />
+	<property name="link_www_widgets" value="/var/www/docdoc_widgets" override="false" />
+	<property name="vendor" value="${dir_prefix}/common/vendor" override="false" />
+	<property name="js" value="${dir_prefix}/${project}/public/js" override="false" />
+	<property name="link_docdoc_widgets" value="${dir_prefix}/${project}/views/widget" override="false" />
+	<property name="widgets_repo" value="${project.basedir}/../docdoc_widgets" />
+	<property name="prod_widgets_repo" value="/var/local/docdoc_widgets" />
+	<property name="path_upload" value="/var/www/Images" />
+
+	<!-- ============================================  -->
+	<!-- Target: Копируем файлы cronConf               -->
+	<!-- ============================================  -->
+	<target name="copy_cronconf">
+		<copy todir="${link_cronconf}" >
+			<fileset dir="${cron_legacy}" >
+				<include name="**/*" />
+			</fileset>
+		</copy>
+		<copy file="${cron_SMSquery}" tofile="${dst_cron_SMSquery}" overwrite="false" />
+		<copy file="${cron_croneLock}" tofile="${dst_cron_croneLock}" overwrite="false" />
+		<phingcall target="chmod_cron_file" />
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: Создаём директории                    -->
+	<!-- ============================================  -->
+	<target name="create_dir">
+		<echo msg="Making directory ${dir_prefix}" />
+		<mkdir dir="${dir_prefix}" mode="0775" />
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: Копируем код из временной папки       -->
+	<!-- ============================================  -->
+	<target name="copy_dir" >
+		<copy todir="${dir_prefix}" >
+			<fileset dir="/var/local/docdoc.git/">
+				<exclude name="**/.git" />
+			</fileset>
+		</copy>
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: Создаём директории для площадки       -->
+	<!-- ============================================  -->
+	<target name="create_dir_diagnostica" >
+		<mkdir dir="${dir_prefix}/${project}/public/protected/assets" mode="0775"/>
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: Создаём директории для площадки-dev   -->
+	<!-- ============================================  -->
+	<target name="create_dir_yii" >
+		<mkdir dir="${dir_prefix}/${project}/assets" mode="0775" />
+		<mkdir dir="${dir_prefix}/${project}/public/assets" mode="0775" />
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: Создаём директории для площадки-prod   -->
+	<!-- ============================================  -->
+	<target name="create_dir_yii_prod" >
+		<mkdir dir="${dir_prefix}/${project}/assets" mode="0775" />
+		<mkdir dir="${dir_prefix}/${project}/public/assets" mode="0775" />
+		<mkdir dir="/static/${project}.docdoc.ru" mode="0775" />
+		<mkdir dir="${runtime}" mode="0775" />
+		<mkdir dir="${static_common}" mode="0775" />
+		<mkdir dir="${common_runtime}" mode="0775" />
+		<symlink target="${runtime}" link="${link_runtime}" overwrite="true" />
+		<symlink target="${common_runtime}" link="${link_common_runtime}" overwrite="true" />
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: Меняем права на cron файлы 0664       -->
+	<!-- ============================================  -->
+	<target name="chmod_cron_file">
+		<chmod mode="0664" >
+			<fileset dir="${link_cronconf}" expandsymboliclinks="true">
+				<include name="**/*.conf" />
+			</fileset>
+		</chmod>
+		<chmod file="${dst_cron_SMSquery}"  mode="0664"/>
+		<chmod file="${dst_cron_croneLock}" mode="0664"/>
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: Создаём символьные ссылки на конфиги для front  -->
+	<!-- ============================================  -->
+	<target name="front">
+		<property name="project" value="front" />
+		<symlink target="${front_log}" link="${link_front_log}" overwrite="true" />
+		<symlink target="${upload}" link="${link_upload}" overwrite="true" />
+		<symlink target="${front_lk_reports}" link="${link_lk_reports}" overwrite="true" />
+		<symlink target="${link_www_widgets}" link="${link_docdoc_widgets}" overwrite="true" />
+		<phingcall target="create_dir_yii_prod" />
+		<phingcall target="create_user_ini"/>
+		<phingcall target="vendor_js_lib"/>
+		<phingcall target="static_dir"/>
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: Создаём символьные ссылки на конфиги и папки для dev stage front  -->
+	<!-- ============================================  -->
+	<target name="dev_front">
+		<property name="project" value="front" />
+		<symlink target="${widgets_repo}" link="${link_docdoc_widgets}" overwrite="true" />
+		<mkdir dir="${link_log}" mode="0775" />
+		<mkdir dir="${link_upload}" mode="0775" />
+		<mkdir dir="${link_upload}/records" mode="0775"/>
+		<mkdir dir="${link_lk_reports}" mode="0775" />
+		<phingcall target="create_dir_yii" />
+		<mkdir dir="${link_runtime}" mode="0775" />
+		<phingcall target="create_user_ini"/>
+		<phingcall target="vendor_js_lib"/>
+		<phingcall target="static_dir"/>
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: Создаём символьные ссылки на конфиги и папки для production widgets  -->
+	<!-- ============================================  -->
+	<target name="widgets">
+		<property name="project" value="widgets" />
+		<mkdir dir="${link_lk_reports}" mode="0775" />
+		<mkdir dir="${link_runtime}" mode="0775" />
+		<phingcall target="create_user_ini"/>
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: Создаём символьные ссылки на конфиги для diagnostica  -->
+	<!-- ============================================  -->
+	<target name="diagnostica" >
+		<property name="project" value="diagnostica" />
+		<property name="js" value="${dir_prefix}/${project}/public/st/js" override="true" />
+		<phingcall target="create_dir_diagnostica" />
+		<phingcall target="create_dir_yii_prod" />
+		<symlink target="${dir_prefix}/${project}/runtime" link="${dir_prefix}/${project}/public/protected/runtime" overwrite="true" />
+		<phingcall target="create_user_ini"/>
+		<phingcall target="vendor_js_lib"/>
+		<phingcall target="static_dir"/>
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: Создаём символьные ссылки на конфиги для dev_diagnostica  -->
+	<!-- ============================================  -->
+	<target name="dev_diagnostica" >
+		<property name="project" value="diagnostica" />
+		<property name="js" value="${dir_prefix}/${project}/public/st/js" override="true" />
+		<phingcall target="create_dir_diagnostica" />
+		<phingcall target="create_dir_yii" />
+		<mkdir dir="${link_runtime}" mode="0775" />
+		<mkdir dir="${dir_prefix}/${project}/public/protected/runtime" mode="0775" />
+		<symlink target="${dir_prefix}/${project}/runtime" link="${dir_prefix}/${project}/public/protected/runtime" overwrite="true" />
+		<phingcall target="create_user_ini"/>
+		<phingcall target="vendor_js_lib"/>
+		<phingcall target="static_dir"/>
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: Создаём символьные ссылки на конфиги для back production -->
+	<!-- ============================================  -->
+	<target name="back" >
+		<property name="project" value="back" />
+		<symlink target="${log}" link="${link_log}" overwrite="true" />
+		<symlink target="${_reports}" link="${link_reports}" overwrite="true" />
+		<symlink target="${feed}" link="${link_feed}" overwrite="true" />
+		<symlink target="${cronconf}" link="${link_cronconf}" overwrite="true" />
+		<phingcall target="create_dir_yii_prod" />
+		<phingcall target="create_user_ini"/>
+		<mkdir dir="${link_runtime}/feed" mode="0775" />
+		<phingcall target="vendor_js_lib"/>
+		<phingcall target="static_dir"/>
+		<mkdir dir="${dir_prefix}/${project}/runtime/ratings" mode="0775" />
+	</target>
+
+	<!-- ================================================================   -->
+	<!-- Target: Создаём символьные ссылки на конфиги и папки для dev и stage back  -->
+	<!-- ================================================================   -->
+	<target name="dev_back" >
+		<property name="project" value="back" />
+		<mkdir dir="${link_log}" mode="0775" />
+		<mkdir dir="${link_reports}" mode="0775" />
+		<mkdir dir="${link_cronconf}" mode="0775" />
+		<phingcall target="create_dir_yii" />
+		<mkdir dir="${link_runtime}" mode="0775" />
+		<phingcall target="create_user_ini"/>
+		<mkdir dir="${link_runtime}/feed" mode="0775" />
+		<phingcall target="vendor_js_lib"/>
+		<phingcall target="static_dir"/>
+		<mkdir dir="${dir_prefix}/${project}/runtime/ratings" mode="0775" />
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: Устанавливаем приложения prod         -->
+	<!-- ============================================  -->
+	<target name="build_prod_link">
+		<phingcall target="create_environment_config"/>
+		<phingcall target="front" />
+		<phingcall target="diagnostica" />
+		<phingcall target="back" />
+		<phingcall target="widgets" />
+		<phingcall target="build_overall" />
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: Устанавливаем приложения dev stage    -->
+	<!-- ============================================  -->
+	<target name="build_dev_link">
+		<mkdir dir="${link_common_runtime}" mode="0775" />
+		<phingcall target="create_environment_config"/>
+		<phingcall target="dev_front" />
+		<phingcall target="dev_diagnostica" />
+		<phingcall target="dev_back" />
+		<phingcall target="widgets" />
+		<phingcall target="dev_build_overall" />
+		<phingcall target="docdocwidgets" />
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Создание симлинков для конфига окружения       -->
+	<!-- ============================================  -->
+	<target name="create_environment_config">
+		<symlink target="${common_config}" link="${common_link}" overwrite="true" />
+		<symlink target="${common_test_config}" link="${common_test_link}" overwrite="true" />
+	</target>
+
+	<!-- ============================================  -->
+	<!-- выполнить для всех сборок                     -->
+	<!-- ============================================  -->
+	<target name="build_overall">
+		<property name="project" value="common" />
+		<mkdir dir="${dir_prefix}/common/assets" mode="0775" />
+		<phingcall target="copy_cronconf" />
+		<property name="ini_file_name" value="${dir_prefix}/${project}/config/overall/cli.ini" override="true"/>
+		<phingcall target="create_user_ini"/>
+	</target>
+
+	<!-- ============================================  -->
+	<!-- выполнить для всех сборок в dev               -->
+	<!-- ============================================  -->
+	<target name="dev_build_overall">
+		<property name="project" value="common" />
+		<property name="ini_file_name" value="${dir_prefix}/${project}/config/overall/cli.ini" override="true"/>
+		<mkdir dir="${dir_prefix}/common/assets" mode="0775" />
+		<phingcall target="copy_cronconf" />
+		<phingcall target="create_user_ini"/>
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: Устанавливаем приложение  прод        -->
+	<!-- ============================================  -->
+	<target name="build">
+		<echo> Building ...... </echo>
+		<available file='${prod_dir_prefix}' property="prod_dir_prefix_not_exists" />
+		<fail
+				message="Directory '${prod_dir_prefix}' not exists. Use '-Dprod_dir_prefix={name}' to override."
+				unless="prod_dir_prefix_not_exists"
+				/>
+		<property name="dir_prefix" value="${prod_dir_prefix}" />
+		<property name="type_config" value="production" />
+		<phingcall target="create_dir" />
+		<phingcall target="copy_dir" />
+		<phingcall target="build_prod_link" />
+		<phingcall target="migrate" />
+		<symlink target="${prod_widgets_repo}" link="${link_www_widgets}" overwrite="true" />
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: Устанавливаем приложение stage        -->
+	<!-- ============================================  -->
+	<target name="stage">
+		<property name="dir_prefix" value="${stage_dir_prefix}" />
+		<property name="type_config" value="stage" />
+		<echo> Building ...... Stage ... ${dir_prefix} </echo>
+		<phingcall target="build_dev_link" />
+		<phingcall target="migrate" />
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: Устанавливаем приложение pseudo       -->
+	<!-- ============================================  -->
+	<target name="pseudo">
+		<property name="dir_prefix" value="${pseudo_dir_prefix}" />
+		<property name="type_config" value="production" />
+		<echo> Building ...... Pseudo ... ${dir_prefix} </echo>
+		<phingcall target="build_prod_link" />
+		<phingcall target="migrate" />
+		<symlink target="${prod_widgets_repo}" link="${link_www_widgets}" overwrite="true" />
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: Устанавливаем приложение dev          -->
+	<!-- ============================================  -->
+	<target name="dev_install">
+		<property name="dir_prefix" value="${project.basedir}" />
+		<property name="type_config" value="${env.LOGNAME}" />
+		<echo> Building ...... Dev ... ${env.LOGNAME} </echo>
+		<available file='${common_config}' property="common_config_file_exists" />
+		<fail
+				message="Config file'${common_config}' not exists. Use '-Dtype_config={name}' to override."
+				unless="common_config_file_exists"
+				/>
+		<phingcall target="build_dev_link" />
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: Выполняем миграции для  dev           -->
+	<!-- ============================================  -->
+	<target name="dev">
+		<phingcall target="dev_install" />
+		<phingcall target="migrate" />
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: Устанавливаем приложение test         -->
+	<!-- ============================================  -->
+	<target name="test">
+		<phingcall target="dev_install" />
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: migrate                               -->
+	<!-- ============================================  -->
+	<target name="migrate">
+		<echo>Apply migrations</echo>
+		<property name="dir_prefix" value="${project.basedir}" />
+		<exec command="./yiic migrate --interactive=0" passthru="true" checkreturn="true" dir="${dir_prefix}" />
+		<phingcall target="clearcache" />
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: ClearCache                            -->
+	<!-- ============================================  -->
+	<target name="clearcache">
+		<echo>Clear Redis Cache</echo>
+		<property name="dir_prefix" value="${project.basedir}" />
+		<exec command="./yiic ClearCache" passthru="true" checkreturn="true" dir="${dir_prefix}" />
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: DocdocWidgets _prod                   -->
+	<!-- ============================================  -->
+	<target name="docdocwidgets_prod">
+		<phingcall target="docdocwidgets">
+			<property name="widgets_repo" value="${prod_widgets_repo}" />
+		</phingcall>
+	</target>
+
+
+	<!-- ============================================  -->
+	<!-- Target: DocdocWidgets                            -->
+	<!-- ============================================  -->
+	<target name="docdocwidgets">
+		<echo>Include DocDoc Widgets Project</echo>
+		<if>
+			<available file="${widgets_repo}" type="dir" />
+			<then>
+				<echo>DocDocWidgets project already created</echo>
+			</then>
+			<else>
+				<mkdir dir="${widgets_repo}" mode="0775" />
+			</else>
+		</if>
+		<if>
+			<available file="${widgets_repo}/.git" type="dir" />
+			<then>
+				<echo>Repository already created</echo>
+			</then>
+			<else>
+				<exec command="git init" passthru="true" checkreturn="true" dir="${widgets_repo}" />
+				<exec command="git remote add origin git@bitbucket.org:dfsru/docdoc_widgets.git " passthru="true" checkreturn="true" dir="${widgets_repo}" />
+			</else>
+		</if>
+		<exec command="git fetch --all -p" passthru="true" checkreturn="true" dir="${widgets_repo}" />
+		<exec command="git reset --hard origin/master" passthru="true" checkreturn="true" dir="${widgets_repo}" />
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: clearTestDb                            -->
+	<!-- ============================================  -->
+	<target name="clearTestDb">
+		<echo>Clear test db cache</echo>
+		<delete file="./common/runtime/DbSchema.md5" />
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: create .user.ini                      -->
+	<!-- ============================================  -->
+	<target name="create_user_ini">
+		<echo>Creating ${ini_file_name}</echo>
+		<exec command="./yiic userini --project=${project} --filename=${ini_file_name}"  passthru="true" checkreturn="true" dir="${dir_prefix}" />
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: Создаём символьные ссылки на js-библиотеки из папки vendor -->
+	<!-- ============================================  -->
+	<target name="vendor_js_lib">
+		<symlink target="${vendor}/components/jquery" link="${js}/jquery" overwrite="true" />
+		<symlink target="${vendor}/components/jqueryui" link="${js}/jquery-ui" overwrite="true" />
+		<symlink target="${vendor}/datatables/datatables/media" link="${js}/datatables" overwrite="true" />
+		<symlink target="${vendor}/datatables/colvis" link="${js}/datatables-colvis" overwrite="true" />
+		<symlink target="${vendor}/datatables/keyTable" link="${js}/datatables-keyTable" overwrite="true" />
+		<symlink target="${vendor}/datatables/fixedHeader" link="${js}/datatables-fixedHeader" overwrite="true" />
+		<symlink target="${vendor}/datatables/tabletools" link="${js}/datatables-tabletools" overwrite="true" />
+		<symlink target="${vendor}/datatables/editor" link="${js}/datatables-editor" overwrite="true" />
+		<symlink target="${vendor}/xdan/datetimepicker" link="${js}/datetimepicker" overwrite="true" />
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: Создаём символьные ссылки для статики -->
+	<!-- ============================================  -->
+	<target name="static_dir">
+		<symlink target="${common_static}" link="${dir_prefix}/${project}/public/static" overwrite="true" />
+		<mkdir dir="${path_upload}/clinic/photos" mode="0775" />
+		<symlink target="${path_upload}/clinic" link="${common_static}/img/clinic" overwrite="true" />
+	</target>
+
+	<!-- ============================================  -->
+	<!-- Target: help                                  -->
+	<!-- ============================================  -->
+	<target name="help">
+		<echo>
+			Usage:
+
+			help               - this message
+			migrate            - apply migrations
+			clearcache         - сlear redis cache
+			clearTestDb        - сlear test db cache
+
+			build              - setup production application
+			stage              - setup stage application
+			dev                - setup dev application
+			test               - setup test application
+
+			docdocwidgets      - setup DocDoc widgets project
+			docdocwidgets_prod - setup production DocDoc widgets project
+		</echo>
+	</target>
+
+</project>

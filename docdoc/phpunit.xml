@@ -1,0 +1,39 @@
+<phpunit bootstrap="./common/tests/bootstrap.php"
+		 colors="false"
+		 convertErrorsToExceptions="true"
+		 convertNoticesToExceptions="true"
+		 convertWarningsToExceptions="true"
+		 stopOnFailure="false">
+
+	<testsuites>
+		<!--
+			Модульные тесты
+		-->
+		<testsuite name="unit">
+			<directory suffix="Test.php" phpVersion="5.3.0" phpVersionOperator=">=">./common/tests/unit</directory>
+			<directory suffix="Test.php" phpVersion="5.3.0" phpVersionOperator=">=">./back/public/tests/unit</directory>
+
+			<directory suffix="Test.php" phpVersion="5.3.0" phpVersionOperator=">=">./front/tests/unit</directory>
+			<directory suffix="Test.php" phpVersion="5.3.0" phpVersionOperator=">=">./back/tests/unit</directory>
+			<directory suffix="Test.php" phpVersion="5.3.0" phpVersionOperator=">=">./diagnostica/tests/unit</directory>
+		</testsuite>
+
+		<!--
+			Функциональыне тесты
+		-->
+		<testsuite name="ui">
+			<directory suffix="Test.php" phpVersion="5.3.0" phpVersionOperator=">=">./common/tests/ui</directory>
+			<directory suffix="Test.php" phpVersion="5.3.0" phpVersionOperator=">=">./front/tests/ui</directory>
+			<directory suffix="Test.php" phpVersion="5.3.0" phpVersionOperator=">=">./back/tests/ui</directory>
+			<directory suffix="Test.php" phpVersion="5.3.0" phpVersionOperator=">=">./diagnostica/tests/ui</directory>
+		</testsuite>
+	</testsuites>
+
+	<filter>
+		<blacklist addUncoveredFilesFromWhitelist="true">
+			<directory suffix=".php">common/vendor</directory>
+			<directory suffix=".php">common/tests</directory>
+		</blacklist>
+	</filter>
+
+</phpunit>

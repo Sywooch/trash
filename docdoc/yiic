@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+ROOT_PATH=$(cd $(dirname $0) && pwd)
+
+SCRIPT="${ROOT_PATH}/common/include/yiic.php"
+
+INI_FILE=${ROOT_PATH}/common/config/overall/cli.ini
+
+#собираем ini параметры
+PARAMS=""
+if [ -f "$INI_FILE" ]; then
+	readarray a < $INI_FILE
+
+	for i in ${!a[*]}
+	do
+		PARAMS="$PARAMS -d ${a[i]}"
+	done
+fi
+
+#собираю команду с переназначенным php.ini
+CMD="/usr/bin/env php $PARAMS $SCRIPT $@"
+
+eval $CMD

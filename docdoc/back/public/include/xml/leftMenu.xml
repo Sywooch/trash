@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LeftMenu>
+	<Group>
+		<Title>Заявки</Title>
+		<Element display="yes">
+			<Title>Список заявок</Title>
+			<URL>/request/index.htm?today&amp;type=call_center</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>OPR</Right>
+				<Right>SOP</Right>
+			</Rights>
+		</Element>
+		<Element display="yes">
+			<Title>Звонки в клинику</Title>
+			<URL>/request/index.htm?today&amp;type=doc_listener&amp;shStatus%5B%5D=1&amp;shStatus%5B%5D=10</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>LIS</Right>
+				<Right>SOP</Right>
+			</Rights>
+		</Element>
+		<Element display="yes">
+			<Title>Все заявки</Title>
+			<URL>/request/index.htm?today&amp;type=default</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>SOP</Right>
+			</Rights>
+		</Element>
+	</Group>
+	
+	<Group>
+		<Title>Контент</Title>
+		<Element display="yes">
+			<Title>Клиники</Title>
+			<URL>/clinic/index.htm</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>CNM</Right>
+				<Right>SOP</Right>
+				<Right>SAL</Right>
+			</Rights>
+		</Element>
+		<Element display="yes">
+			<Title>Врачи</Title>
+			<URL>/doctor/index.htm</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>CNM</Right>
+				<Right>SOP</Right>
+			</Rights>
+		</Element>
+		<Element display="yes">
+			<Title>Отзывы</Title>
+			<URL>/opinion/index.htm</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>CNM</Right>
+				<Right>SOP</Right>
+			</Rights>
+		</Element>
+		<Element display="yes">
+			<Title>Справочник пациента</Title>
+			<URL>/article/indexLibrary.htm</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>CNM</Right>
+				<Right>ACM</Right>
+			</Rights>
+		</Element>
+		<Element display="yes">
+			<Title>Справочник заболеваний</Title>
+			<URL>/article/indexIllness.htm</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>CNM</Right>
+				<Right>ACM</Right>
+			</Rights>
+		</Element>
+
+		<Element display="no">
+			<Title>Статьи</Title>
+			<URL>/2.0/article</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>CNM</Right>
+				<Right>ACM</Right>
+			</Rights>
+		</Element>
+		<Element display="yes">
+			<Title>Разделы статей</Title>
+			<URL>/2.0/articleSection</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>CNM</Right>
+				<Right>ACM</Right>
+			</Rights>
+		</Element>
+		<Element display="yes">
+			<Title>Диагностики</Title>
+			<URL>/2.0/Diagnostica</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>CNM</Right>
+				<Right>ACM</Right>
+			</Rights>
+		</Element>
+		<Element display="yes">
+			<Title>Направления</Title>
+			<URL>/2.0/Sector</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>CNM</Right>
+				<Right>ACM</Right>
+			</Rights>
+		</Element>
+		<Element display="yes">
+			<Title>SEO-блоки</Title>
+			<URL>/2.0/SectorSeoText</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>CNM</Right>
+				<Right>ACM</Right>
+			</Rights>
+		</Element>
+		<Element display="yes">
+			<Title>SEO-страницы</Title>
+			<URL>/2.0/Page</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>CNM</Right>
+				<Right>ACM</Right>
+			</Rights>
+		</Element>
+		
+		<Element display="yes">
+			<Title>Города</Title>
+			<URL>/2.0/City</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>CNM</Right>
+				<Right>ACM</Right>
+			</Rights>
+		</Element>
+		<Element display="yes">
+			<Title>Районы</Title>
+			<URL>/2.0/District</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>CNM</Right>
+				<Right>ACM</Right>
+			</Rights>
+		</Element>
+
+		<Element display="yes">
+			<Title>Линии метро</Title>
+			<URL>/2.0/UndergroundLine</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>CNM</Right>
+				<Right>ACM</Right>
+			</Rights>
+		</Element>
+		<Element display="yes">
+			<Title>Станции метро</Title>
+			<URL>/2.0/UndergroundStation</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>CNM</Right>
+				<Right>ACM</Right>
+			</Rights>
+		</Element>
+		<Element display="yes">
+			<Title>Партнеры</Title>
+			<URL>/2.0/Partner</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>CNM</Right>
+				<Right>ACM</Right>
+			</Rights>
+		</Element>
+		<Element display="yes">
+			<Title>Телефоны</Title>
+			<URL>/2.0/Phone</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>CNM</Right>
+				<Right>ACM</Right>
+			</Rights>
+		</Element>
+		<Element display="yes">
+			<Title>Провайдеры телефонов</Title>
+			<URL>/2.0/PhoneProvider</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>CNM</Right>
+				<Right>ACM</Right>
+			</Rights>
+		</Element>
+		<Element display="yes">
+			<Title>Стоимости заявок для партнера</Title>
+			<URL>/2.0/PartnerCost</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>CNM</Right>
+				<Right>ACM</Right>
+			</Rights>
+		</Element>
+		<Element display="yes">
+			<Title>Рейтинги</Title>
+			<URL>/2.0/ratingStrategy</URL>
+			<Rights>
+				<Right>ADM</Right>
+			</Rights>
+		</Element>
+		<Element display="yes">
+			<Title>Телефоны партнеров для клиник</Title>
+			<URL>/2.0/clinicPartnerPhone</URL>
+			<Rights>
+				<Right>ADM</Right>
+			</Rights>
+		</Element>
+	</Group>
+	
+	<Group>
+		<Title>Отчеты</Title>
+		<Element display="yes">
+			<Title>Отчеты по клиникам (общий)</Title>
+			<URL>/reports/clinicReport.htm</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>SAL</Right>
+				<Right>SOP</Right>
+			</Rights>
+		</Element>
+		<Element display="no">
+			<Title>Заявки. Общий</Title>
+			<URL>/reports/commonRequestList.htm</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>SAL</Right>
+				<Right>SOP</Right>
+			</Rights>
+		</Element>
+		<Element display="yes">
+			<Title>Заявки. Детализированный</Title>
+			<URL>/reports/requestList.htm</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>SAL</Right>
+				<Right>SOP</Right>
+			</Rights>
+		</Element>
+		<Element display="yes">
+			<Title>Врачи. Общий</Title>
+			<URL>/reports/commonDoctorList.htm</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>SAL</Right>
+				<Right>SOP</Right>
+			</Rights>
+		</Element>
+		<Element display="yes">
+			<Title>Врачи в компаниях</Title>
+			<URL>/reports/doctorList.htm</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>CNM</Right>
+			</Rights>
+		</Element>
+		<Element display="no">
+			<Title>Диагностика. Звонки</Title>
+			<URL>/reports/index.htm</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>SOP</Right>
+				<Right>SAL</Right>
+			</Rights>
+		</Element>
+		<Element display="yes">
+			<Title>Анализ обращений месячный</Title>
+			<URL>/reports/monthRequestReport.htm</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>SOP</Right>
+				<Right>SAL</Right>
+			</Rights>
+		</Element>
+		<Element display="yes">
+			<Title>Анализ обращений по клиникам</Title>
+			<URL>/reports/monthRequestReportByClinic.htm</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>SOP</Right>
+				<Right>SAL</Right>
+			</Rights>
+		</Element>
+		<Element display="yes">
+			<Title>Звонки по диагностики по клиникам</Title>
+			<URL>/reports/monthDiagRequestReportByClinic.htm</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>SOP</Right>
+				<Right>SAL</Right>
+			</Rights>
+		</Element>
+		<Element display="yes">
+			<Title>Прайс на услуги диагностических центров</Title>
+			<URL>/reports/priceClinicServices.htm</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>SOP</Right>
+				<Right>SAL</Right>
+				<Right>CNM</Right>
+			</Rights>
+		</Element>
+		<Element display="no">
+			<Title>Эффективность работы операторов</Title>
+			<URL>/reports/callCenterReport.htm</URL>
+			<Rights>
+				<Right>ADM</Right>
+			</Rights>
+		</Element>
+		<Element display="yes">
+			<Title>Диагностика, статусы</Title>
+			<URL>/reports/diag.htm</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>SOP</Right>
+				<Right>SAL</Right>
+			</Rights>
+		</Element>
+		<Element display="yes">
+			<Title>Коллекшн</Title>
+			<URL>/reports/requestCount.htm</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>SAL</Right>
+				<Right>SOP</Right>
+			</Rights>
+		</Element>
+		<Element display="yes">
+			<Title>Биллинг</Title>
+			<URL>/2.0/clinicBilling/</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>SAL</Right>
+				<Right>SOP</Right>
+			</Rights>
+		</Element>
+		<Element display="yes">
+			<Title>Аналитика</Title>
+			<URL>/2.0/analytics</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>SAL</Right>
+				<Right>SOP</Right>
+			</Rights>
+		</Element>
+	</Group>
+	<Group>
+		<Title>Справочники</Title>
+		<Element display="yes">
+			<Title>Образование</Title>
+			<URL>/dict/education.htm</URL>
+			<Rights>
+				<Right>ADM</Right>
+			</Rights>
+		</Element>
+		<Element display="yes">
+			<Title>Ученые степени</Title>
+			<URL>/dict/degree.htm</URL>
+			<Rights>
+				<Right>ADM</Right>
+			</Rights>
+		</Element>
+	</Group>
+	
+	<Group>
+		<Title>Администрирование</Title>
+		<Element display="yes">
+			<Title>Пользователи системы</Title>
+			<URL>/user/index.htm</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>SOP</Right>
+			</Rights>
+		</Element>
+		<Element display="no">
+			<Title>СЕО</Title>
+			<URL>/seo/index.htm</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>SEO</Right>
+			</Rights>
+		</Element>
+		<Element display="yes">
+			<Title>Логи</Title>
+			<URL>/logview/index.htm</URL>
+			<Rights>
+				<Right>ADM</Right>
+			</Rights>
+		</Element>
+		<Element display="yes">
+			<Title>Очередь e-mail рассылки</Title>
+			<URL>/logview/emailList.htm</URL>
+			<Rights>
+				<Right>ADM</Right>
+			</Rights>
+		</Element>
+		<Element display="yes">
+			<Title>Очередь SMS</Title>
+			<URL>/logview/smsList.htm</URL>
+			<Rights>
+				<Right>ADM</Right>
+			</Rights>
+		</Element>
+		<Element display="yes">
+			<Title>Службы</Title>
+			<URL>/adminservice/index.htm</URL>
+			<Rights>
+				<Right>ADM</Right>
+			</Rights>
+		</Element>
+	</Group>
+	<Group>
+		<Title>Общее</Title>
+		<Element display="yes">
+			<Title>Выйти из системы</Title>
+			<URL>/auth/logout.htm</URL>
+			<Rights>
+				<Right>ALL</Right>
+			</Rights>
+		</Element>
+	</Group>
+	<Group>
+		<Title>API клиник</Title>
+		<Element display="yes">
+			<Title>Врачи</Title>
+			<URL>/2.0/ApiDoctor</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>CNM</Right>
+				<Right>ACM</Right>
+			</Rights>
+		</Element>
+		<Element display="yes">
+			<Title>Клиники</Title>
+			<URL>/2.0/ApiClinic</URL>
+			<Rights>
+				<Right>ADM</Right>
+				<Right>CNM</Right>
+				<Right>ACM</Right>
+			</Rights>
+		</Element>
+	</Group>
+</LeftMenu>

@@ -1,0 +1,24 @@
+{
+	"jsonrpc": 2.0,
+	"result":[
+		{
+			"clinicId" : "external_id123",
+			"name" : "Клиника 1",
+			"phone" : "74951234567",
+			"city" : "Москва"
+		},
+		{
+			"clinicId" : "external_id234",
+			"name" : "Клиника 2",
+			"phone" : "74951234567",
+			"city" : "Москва"
+		},
+		{
+			"clinicId" : "external_id567",
+			"name" : "Клиника 3",
+			"phone" : "74951234567",
+			"city" : "Москва"
+		}
+	],
+	"id": "abc"
+}

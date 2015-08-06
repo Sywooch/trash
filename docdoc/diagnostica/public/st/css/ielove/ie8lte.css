@@ -1,0 +1,22 @@
+/* -----------------------------------------------------------------------
+
+IE workarounds
+
+----------------------------------------------------------------------- */
+.chromeframe {
+    padding: 10px;
+    background: #fff;
+    color: #777;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 3px;
+}
+
+.search_input {
+    vertical-align: top;
+    line-height: 34px;
+}
+
+span.placeholder {
+	line-height: 24px !important;
+}

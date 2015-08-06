@@ -1,0 +1,64 @@
+/*header*/
+#logo a{background:url("i/logo.png") no-repeat; width: 288px; height: 97px; margin-top: 13px;}
+
+.head-left .flag{background:url("i/flag.png") no-repeat 0 0; width:109px; right:-11px;}
+.head-left .slogan {padding: 35px 13px 0 0; width: 218px;}
+.head-left p{font-size: 22px; margin-bottom: 7px; line-height: 20px;}
+.head-left span, .wr-span{font-size: 18px; color: #29aaac;line-height: 16px;}
+
+.right-picture{background:url("i/head.png") no-repeat; width: 290px; height: 300px;position:absolute; top:-7px; right:40px; z-index:1;}
+/*header*/
+
+/*search*/
+.search .fold-corn{background: url("i/fold_corn.gif") no-repeat 0 0; height: 29px; position: absolute; right: 56px; top: 0; width: 105px;}
+.search .doctor{left:15px;}
+.search-inner .doctor {right: 0; left:auto;}
+.search .inp{width: 287px;}
+/*search*/
+
+/*buttons*/
+.but-list, .but-doc {background-position: 0 -39px; float: right; font-size: 16px; }
+.but-list, .but-doc, .but-doc input{width: 161px; height: 30px;}
+.but-list span{top: 4px;}
+.but-doc {float: none; margin: 0 auto;}
+.but-doc span {left: 16px; letter-spacing: -1px; top: 4px;}
+.but-op {background-position: 0 -70px; margin-top: 22px;}
+.but-op span {font-size: 16px; left: 16px; top: 1px;}
+.but-op, .but-op input{height: 24px; width: 141px;}
+.but-metro {margin-top:20px;}
+.but-metro span, .but-specs span {font-size: 20px; font-weight: bold; left: 29px; top: 8px;}
+.but-specs, .but-reg {margin: 0 auto;}
+.but-reg, .but-reg input{width: 178px; height: 30px;}
+.but-reg {background-position: 0 -95px;}
+.but-reg span {font-size: 16px; left: 62px; top: 5px;}
+.but-reg-inp {float: right; height: 26px; overflow: hidden;  position: relative;}
+.but-reg-inp i {background: url("i/buttons.png") no-repeat 0 -126px; display: block; height: 26px; position: relative; width: 115px;}
+.but-reg-inp span {font-family: calibri; font-size: 16px; position: absolute; text-align: center; top: 7px; width: 115px; line-height: 11px;}
+.but-reg-inp input {height: 26px; opacity: 0; position: absolute; top: 0; width: 115px; z-index: 2;}
+.but-reg-two, .but-reg-two input {width: 115px; height: 30px;}
+.but-reg-two {background-position: 0 -153px; margin: 0 auto;}
+.but-reg-two span {font-size: 16px; left: 12px; top: 5px;}
+/*buttons*/
+
+/*content*/
+.content-right .right-item a.right-item-pict {background: url("i/pict2.png") no-repeat -6px 0; height: 80px;  width: 84px;}
+.result-item .list-img {width: 136px; padding-right: 5px;}
+.result .result-item table, .this-doc table{line-height: 16px; margin-bottom: 12px;}
+.result .result-item table .first, .this-doc table .first {padding-right: 20px; white-space: nowrap; width: 1%;}
+.result .result-item table .second, .this-doc table .second {font-weight: bold; padding-right: 20px; }
+.result .result-item .echo table{width: 610px;}
+.result .result-item td{vertical-align:top;}
+.link-no-style{text-decoration:none;color:#4D4D4D;}
+
+div.tel {
+    background: url("i/ico-phone.gif") no-repeat scroll 0 50% transparent;
+    font-size: 16px;
+    line-height: 13px;
+    padding-left: 23px;
+    white-space: nowrap;
+}
+/*content*/
+
+/* popup */
+#popup{border-color: #29aaac}
+/* popup */

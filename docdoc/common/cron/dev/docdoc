@@ -1,0 +1,5 @@
+MAILTO=""
+
+# m h  dom mon dow   command
+#*/2 * * * * docdoc /var/local/docdoc >/dev/null 2>&1
+

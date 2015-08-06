@@ -1,0 +1,14 @@
+#tagList	{ position:relative; width: 100%; }
+
+#tagList div { margin:0px; padding:0;}
+#tagList span { 
+			margin: 0px; 
+			padding:0; 
+			font-size:12px; 
+}
+
+#tagList span sup { 
+			color: #004080;
+			margin-left: 5px;
+			cursor:pointer;
+}

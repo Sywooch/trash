@@ -1,0 +1,81 @@
+/* mobile specific */
+
+.l-site-mobile .search_input{
+    background-color: #fff;
+}
+
+.l-site-mobile .search_list_spec, .l-site-mobile .search_list_metro {
+    margin-left: -45px;
+}
+
+.l-site-mobile i.js-popup-tr {
+    display: none;
+}
+
+.l-site-mobile .header_contact_title {
+	font-size: 18px;
+	font-size: 1.8rem;
+}
+/* mobile specific end */
+
+.search_input {
+    vertical-align: top;
+}
+
+.search_input_imit {
+    position: relative;
+}
+
+.m-simple .search_input_imit .search_input {
+    display: inline-block;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    top: 0;
+}
+
+/* prevent header elements to be placed in more than one line */
+.l-header {
+    white-space: nowrap;
+}
+
+/* doctor_list, improving readability */
+.filter_list {
+    font-size: 20px;
+    font-size: 2rem;
+    line-height: 20px;
+}
+
+.clinic_card {
+    font-size: 20px;
+    font-size: 2rem;
+}
+
+.search_input_imit_spec {
+    white-space: nowrap !important;
+    display: inline-block;
+}
+.homepage .search_input_imit_spec {
+    white-space: normal !important;
+    display: inline;
+}
+.homepage .search_input_imit {
+    border: 0;
+}
+.search_input {
+    padding-right: 10px;
+    width: 31%;
+}
+
+.has-aside {
+    width: 100%;
+}
+
+.l-aside {
+    display: none;
+}
+
+.tags-list {
+    font-size: 100%;
+}

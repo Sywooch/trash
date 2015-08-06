@@ -1,0 +1,5 @@
+_reports/*
+log/*
+include/SMSquery.conf
+*.conf
+feed.xml

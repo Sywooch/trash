@@ -1,0 +1,452 @@
+/*
+DocDoc icons
+author: rs
+
+Place icons related styles here!
+Use tab with specifying class to alter an icon
+*/
+
+
+/****************/
+/* CSS Map ******/
+/****************/
+/* 1. Icons *****/
+/* 2. Doctors ***/
+/****************/
+
+
+/* =icons */
+
+.i-closetohome {
+	background:url(../img/icons/i-closetohome.png) no-repeat 0px 0px;
+	padding-left: 55px;
+}
+
+.i-ratingsystem {
+	background:url(../img/icons/i-ratingsystem.png) no-repeat 0px 0px;
+	padding-left: 55px;
+}
+
+.i-sortbyprice {
+	background:url(../img/icons/i-sortbyprice.png) no-repeat 0px 0px;
+	padding-left: 55px;
+}
+
+.i-diagcenters {
+	background:url(../img/icons/i-diagcenters.png) no-repeat 50% 20px;
+	padding-top: 100px;
+}
+
+.i-pacientlib {
+	background:url(../img/icons/i-pacientlib.png) no-repeat 50% 20px;
+	padding-top: 100px;
+}
+
+.i-sicklist {
+	background:url(../img/icons/i-sicklist.png) no-repeat 50% 20px;
+	padding-top: 100px;
+}
+
+.i-lk_enter {
+	background:url(../img/icons/i-lk_enter.png) no-repeat 0px 0px;
+	padding-left: 15px;
+}
+
+.i-lk_reg {
+	background:url(../img/icons/i-lk_reg.png) no-repeat 0px 0px;
+	padding-left: 15px;
+}
+
+.i-goback {
+	background:url(../img/icons/i-goback.png) no-repeat 0px bottom;
+	padding-left: 30px;
+}
+
+.i-required:after {
+	content:"*";
+	color: #ff0000;
+	letter-spacing: 5px;
+}
+
+.i-trust_rating {
+	background:url(../img/icons/i-trust_rating.png) no-repeat 10px 50%;
+	padding-left: 50px;
+}
+
+.i-trust_price {
+	background:url(../img/icons/i-trust_price.png) no-repeat 10px 50%;
+	padding-left: 55px;
+}
+
+.i-trust_cashback {
+	background:url(../img/icons/i-trust_cashback.png) no-repeat 10px 50%;
+	padding-left: 50px;
+}
+
+.i-badge_departure {
+	background:url(../img/icons/i-badge_departure.png) no-repeat 50% 50%;
+}
+
+.i-badge_adult {
+	background:url(../img/icons/i-badge_adult.png) no-repeat 50% 50%;
+}
+
+.i-badge_child {
+	background:url(../img/icons/i-badge_child.png) no-repeat 50% 50%;
+}
+
+.i-map_flag {
+	background:url(../img/icons/i-map_flag.png) no-repeat left 200%;
+	padding-left: 18px;
+	
+	display: inline-block;
+	line-height: 2em;
+}
+
+.i-diagcenters_small {
+	background:url(../img/icons/i-diagcenters_small.png) no-repeat left 150%;
+	padding-left: 50px;
+}
+
+.i-searchonmap {
+	background:url(../img/icons/i-searchonmap.png) no-repeat left center;
+	padding-left: 50px;
+}
+
+.i-step-request {
+	background:url(../img/icons/i-step-request.png) no-repeat center 3px;
+	padding-top: 60px;
+}
+.i-step-doctor {
+	background:url(../img/icons/i-step-doctor.png) no-repeat center 0;
+	padding-top: 60px;
+}
+.i-step-call {
+	background:url(../img/icons/i-step-call.png) no-repeat center 3px;
+	padding-top: 60px;
+}
+.i-step-review {
+	background:url(../img/icons/i-step-review.png) no-repeat center 6px;
+	padding-top: 60px;
+}
+
+.i-aboutus_cashfree {
+    background:url(../img/common/i-about_cashfree.png) no-repeat left center;
+    padding: 50px 0 50px 180px;
+}
+
+.i-aboutus_discount {
+    background:url(../img/common/i-about_discount.png) no-repeat right center;
+    padding: 50px 120px 50px 0px;
+}
+
+.i-aboutus_mission {
+    background:url(../img/common/i-about_mission.png) no-repeat right center;
+    padding: 20px 210px 20px 0px;
+}
+
+.i-aboutus_history {
+    background:url(../img/common/i-about_history.png) no-repeat left 20px;
+    padding: 20px 0px 20px 180px;
+}
+
+.i-disclaimer {
+    padding: 0 0 0 38px;
+    background-image: url(../img/icons/i-disclaimer.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+.i-information {
+    padding: 8px 0 8px 38px;
+    background-image: url(../img/icons/i-information.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+.i-library {
+    padding: 8px 0 8px 38px;
+    background-image: url(../img/icons/i-library.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+.i-address-doctor {
+	position: relative;
+}
+.i-address-doctor:after {
+	display: block;
+	position: absolute;
+	content: '';
+	left: -19px;
+	top: 8px;
+	margin-top: -9px;
+	width: 12px;
+	height: 16px;
+    background:url(../img/icons/i-address.png) no-repeat;
+}
+.mobile .i-address-doctor:after {
+	top: 16px !important;
+}
+.i-ext-address:after {
+	background:url(../img/icons/i-address-grey.png) no-repeat !important;
+}
+/* icons end */
+
+/* how_steps */
+.i-how_reqcall {
+    background:url(../img/common/how_reqcall.png) no-repeat;
+}
+.i-how_reqonline {
+    background:url(../img/common/how_reqonline.png) no-repeat;
+}
+.i-how_doctorsearch {
+    background:url(../img/common/how_doctorsearch.png) no-repeat;
+    background-position: right top;
+}
+.i-how_reqclinic {
+    background:url(../img/common/how_reqclinic.png) no-repeat;
+    background-position: right 40px;
+}
+.i-how_review {
+    background:url(../img/common/how_review.png) no-repeat;
+}
+/* how steps end */
+
+/* arrows */
+.i-arrow_down {
+	position: relative;
+	padding-right: 12px;
+	
+}
+.i-arrow_down:before {
+	content: "↓";
+	font-family: Calibri;
+	font-weight: bold;
+	font-size: 11px;
+	display: inline-block;
+	position:absolute;
+	top: 0;
+	right: 0px;
+	background-color: #ffffff;
+	z-index: 0;
+}
+/* arrows end */
+
+/* =doctors */
+.i-doctor_l {
+	margin-left: 0;		
+	position: relative;
+	z-index: 0;
+	border-left: 1px solid #cccccc;
+}
+	.i-doctor_l:before {
+		content: "";
+		display: inline-block;
+		position:absolute;
+		width: 1px;
+		height: 100%;
+		top: 0;
+		left: 0px;
+		background-color: #ffffff;
+		z-index: 0;
+	}
+	
+.i-doctor_l:after {
+	content:"";
+	position: absolute;
+	width: 103px;
+	height: 181px;
+	background: url(../img/sprites/sp_doctors.png) no-repeat -85px -440px;
+	left: -63px;
+	top: 0;
+	z-index: 50;
+}
+
+
+.i-doctor_r {
+	position: relative;
+}
+
+.i-doctor_r:after {
+	 content:"";
+	 position: absolute;
+	 width: 158px;
+	 height: 147px;
+	 background: url(../img/common/doctor_1.png) no-repeat 0px 0px;
+	 right: 0px;
+	 bottom: -60px;
+	 z-index: 0;
+ }
+
+.i-doctor_4 {
+	position: relative;
+	border-right: 1px solid #ccc;
+	padding-right: 80px;
+}
+
+.i-doctor_4:after {
+	content:"";
+	position: absolute;
+	width: 120px;
+	height: 180px;
+	background: url(../img/sprites/sp_doctors.png) no-repeat -80px -240px;
+	right: -77px;
+	top: 0px;
+	z-index: 0;
+}
+
+
+.i-doctor_5 {
+    position: relative;
+    padding-right: 150px;
+}
+
+.i-doctor_5:after {
+    content:"";
+    position: absolute;
+    width: 123px;
+    height: 106px;
+    background: url(../img/common/doctor_5.png) no-repeat 0px 0px;
+    right: 0px;
+    bottom: -20px;
+    z-index: 0;
+}
+
+
+.i-doctor_request {
+    margin-left: 0;
+    padding-left: 90px;
+    position: relative;
+    z-index: 0;
+    border-left: 1px solid #cccccc;
+}
+.i-doctor_request:before {
+    content: "";
+    display: inline-block;
+    position:absolute;
+    width: 1px;
+    height: 100%;
+    top: 0;
+    left: 0px;
+    background-color: #ffffff;
+    z-index: 0;
+}
+
+.i-doctor_request:after {
+    content:"";
+    position: absolute;
+    width: 107px;
+    height: 183px;
+    background: url(../img/common/doctor_4.png) no-repeat 0px 0px;
+    left: -41px;
+    top: 60px;
+    z-index: 50;
+}
+
+
+/* doctors end */
+
+/* metro */
+
+.i-metro_purple {
+	background-position: 0 center;
+}
+
+.i-metro_lightgreen {
+	background-position: 0 center;
+}
+/* metro end */
+
+/* =today */
+.i-today-doctor {
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    background-image: url(../img/icons/i-today_doctor.png);
+}
+.i-today-medicine {
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    background-image: url(../img/icons/i-today_medicine.png);
+}
+.i-today-partners {
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    background-image: url(../img/icons/i-today_partner.png);
+}
+.i-today-requests {
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    background-image: url(../img/icons/i-today_request.png);
+}
+.i-today-reviews {
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    background-image: url(../img/icons/i-today_review.png);
+}
+.i-today-comeback {
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    background-image: url(../img/icons/i-today_comeback.png);
+}
+/* today end */
+
+.i-notification {
+    color: #a1a1a1;
+    display: block;
+    padding: 10px 10px 10px 38px;
+    background-image: url(../img/icons/i-disclaimer.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+/* metro controls */
+
+.i-metroctrl_circleinner {
+    line-height: 20px;
+    padding: 3px 0 3px 20px;
+    background: url(../img/icons/i-metroctrl_circleinner.png) no-repeat left center;
+}
+.i-metroctrl_circle {
+    padding: 3px 0 3px 20px;
+    background: url(../img/icons/i-metroctrl_circle.png) no-repeat left center;
+}
+.i-metroctrl_remove {
+    padding: 3px 0 3px 20px;
+    background: url(../img/icons/i-metroctrl_remove.png) no-repeat left center;
+}
+
+/* metro controls end */
+
+
+
+/* context icons */
+
+.i-context_search {
+	padding: 0px 0 0px 50px;
+	background: url(../img/icons/i-context_search.png) no-repeat 0px 5px;
+}
+.i-context_stars {
+	padding: 0px 0 0px 50px;
+	background: url(../img/icons/i-context_stars.png) no-repeat 5px 5px;
+}
+.i-context_request {
+	padding: 0px 0 0px 50px;
+	background: url(../img/icons/i-context_request.png) no-repeat 7px 5px;
+}
+
+/* context icons end */
+
+/* landing icons */
+
+.i-landing_search {
+	padding: 0px 0 0px 65px;
+	background: url(../img/icons/i-landing_search.png) no-repeat 0px 5px;
+}
+.i-landing_best {
+	padding: 0px 0 0px 65px;
+	background: url(../img/icons/i-landing_best.png) no-repeat 0px 5px;
+}
+.i-landing_sale {
+	padding: 0px 0 0px 65px;
+	background: url(../img/icons/i-landing_sale.png) no-repeat 0px 5px;
+}
+
+/* landing icons end */

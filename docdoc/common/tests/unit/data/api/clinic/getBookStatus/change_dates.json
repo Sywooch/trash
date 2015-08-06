@@ -1,0 +1,10 @@
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "status": "NEW",
+    "message": "",
+    "start_time": "2015-02-12 12:00:00",
+    "finish_time": "2015-02-12 13:10:00"
+  },
+  "id": 99
+}

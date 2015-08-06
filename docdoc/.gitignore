@@ -1,0 +1,50 @@
+# composer
+common/vendor/
+composer.lock
+
+# Local config
+common/config/overall/local.php
+common/config/overall/test.php
+
+# IDE
+.idea
+
+common/assets
+common/runtime
+common/static
+
+front/assets
+front/public/assets
+front/public/static
+front/runtime
+
+back/public/assets
+back/public/runtime
+back/public/static
+back/runtime
+back/records
+
+diagnostica/assets
+diagnostica/public/assets
+diagnostica/runtime
+diagnostica/public/protected/assets
+diagnostica/public/protected/runtime
+diagnostica/public/static
+
+static/public/img/clinic
+
+#php.ini
+.user.ini
+php-cli.ini
+cli.ini
+
+**/js/datatables
+**/js/datatables-colvis
+**/js/datatables-editor
+**/js/datatables-tabletools
+**/js/datetimepicker
+**/js/jquery
+**/js/jquery-ui
+
+# Виджеты
+front/views/widget

@@ -1,0 +1,24 @@
+.visiting {
+    height: 300px;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    border-radius: 7px;
+}
+
+.slot {
+    float:left;
+    text-align:center;
+    cursor:pointer;
+}
+
+.slot label {
+    cursor:pointer;
+}
+
+.slot input[type="radio"] {
+    display: none;
+}
+
+div.selected {
+    background: #c8cc46;
+}

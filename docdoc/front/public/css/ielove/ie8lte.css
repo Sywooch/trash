@@ -1,0 +1,21 @@
+/* -----------------------------------------------------------------------
+
+IE workarounds
+
+----------------------------------------------------------------------- */
+
+.footer_group {
+	width: 33% !important;	
+}
+
+.chromeframe {
+    padding: 10px;
+    background: #fff;
+    color: #777;
+    font-size: 18px;
+}
+
+.search_input {
+    vertical-align: top;
+    line-height: 26px;
+}

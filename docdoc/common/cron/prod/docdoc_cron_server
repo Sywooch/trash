@@ -1,0 +1,73 @@
+SHELL=/bin/bash
+PATH="/var/local/php/bin:/var/local/php/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:$PATH"
+PATH_TO_CRON="/var/www/docdoc/back/public/service/crone"
+PATH_TO_CRON_LOG="/var/log/docdoc/cron"
+PATH_TO_YIIC="/var/www/docdoc"
+MAILTO=""
+
+# m h  dom mon dow   command
+
+# Отправка СМС напоминаний
+*/2 * * * * docdoc $PATH_TO_YIIC/yiic smsReminder send 2>&1 >> $PATH_TO_CRON_LOG/requestListener.log
+
+#посыл call ивента в mixpanel
+*/5 * * * * docdoc $PATH_TO_YIIC/yiic comagic 2>&1
+
+#пересчет стоимости заявки
+30 2 * * * docdoc $PATH_TO_YIIC/yiic recalculaterequestcost monthRecalculate 2>&1 >> $PATH_TO_CRON_LOG/request_cost.log
+
+#проставляем статус биллинга заявкам
+10 5 * * * docdoc $PATH_TO_YIIC/yiic recalculaterequestcost came 2>&1 >> $PATH_TO_CRON_LOG/request_status_came.log
+
+#проставляем статус отменена клиникой для дублей
+30 3 * * * docdoc $PATH_TO_YIIC/yiic recalculaterequestcost refused 2>&1 >> $PATH_TO_CRON_LOG/request_status_refused.log
+
+#пересчет данных по биллингу клиник
+30 6 * * * docdoc $PATH_TO_YIIC/yiic recalculaterequestcost clinicBilling 2>&1 >> $PATH_TO_CRON_LOG/request_status_refused.log
+
+#пересчет рейтингов для всех
+0 2 * * * docdoc $PATH_TO_YIIC/yiic updaterating clinic 2>&1
+0 3 * * * docdoc $PATH_TO_YIIC/yiic updaterating doctor 2>&1
+*/2 * * * * docdoc $PATH_TO_YIIC/yiic updaterating onlybyneedstrategy 2>&1
+
+#пересчет рейтинга клиники выводимого на сайте
+0 4 * * * docdoc $PATH_TO_YIIC/yiic updaterating clinicRatingShow 2>&1
+
+#пересчет подсказок для врачей
+*/10 * * * * docdoc $PATH_TO_YIIC/yiic updatetips doctors 2>&1
+
+#формиреум отчет о неудачных звонках
+0 5 * * * docdoc $PATH_TO_YIIC/yiic missedcallsreport 2>&1 >> $PATH_TO_CRON_LOG/missedcallsreport.log
+
+#обновление токена авторизации для google big data
+*/30 * * * * docdoc $PATH_TO_YIIC/yiic googlebq updatetoken 2>&1
+* * * * * docdoc $PATH_TO_YIIC/yiic googlebq flush 2>&1 >> $PATH_TO_CRON_LOG/google_bq.log
+
+#загрузка данных о заявках в bigquery
+0 4 * * * docdoc $PATH_TO_YIIC/yiic bigqueryreport requests 2>&1 >> $PATH_TO_CRON_LOG/bqreport_requests.log
+0 3 * * * docdoc $PATH_TO_YIIC/yiic bigqueryreport partners 2>&1 >> $PATH_TO_CRON_LOG/bqreport_partners.log
+20 3 * * * docdoc $PATH_TO_YIIC/yiic bigqueryreport answerspeed 2>&1 >> $PATH_TO_CRON_LOG/bqreport_answerspeed.log
+30 3 * * * docdoc $PATH_TO_YIIC/yiic bigqueryreport missedcalls 2>&1 >> $PATH_TO_CRON_LOG/bqreport_missedcalls.log
+
+#уведомления о достигнутом лимите записей
+0 */6 * * * docdoc $PATH_TO_YIIC/yiic limitrequests sendnotice 2>&1
+
+# загрузка клиник, врачей, слотов
+*/30 1-7 * * * docdoc $PATH_TO_YIIC/yiic clinicapi loadClinics 2>&1 >> $PATH_TO_CRON_LOG/clinicapi_loadClinics.log
+20 0 * * * docdoc $PATH_TO_YIIC/yiic clinicapi loadResources 2>&1 >> $PATH_TO_CRON_LOG/clinicapi_loadResources.log
+*/15 * * * * docdoc $PATH_TO_YIIC/yiic clinicapi loadSlots 2>&1 >> $PATH_TO_CRON_LOG/clinicapi_loadSlots.log
+*/30 * * * * docdoc $PATH_TO_YIIC/yiic clinicapi bookingCheck 2>&1 >> $PATH_TO_CRON_LOG/clinicapi_bookingCheck.log
+*/20 * * * * docdoc $PATH_TO_YIIC/yiic clinicapi updateHasSlots 2>&1 >> $PATH_TO_CRON_LOG/clinicapi_updateHasSlots.log
+30 5 * * * docdoc $PATH_TO_YIIC/yiic clinicapi report 2>&1 >> $PATH_TO_CRON_LOG/clinicapi_report.log
+
+# Установка партнерского статуса всем заявкам в холде на 8 день месяца
+0 5 8 * * docdoc $PATH_TO_YIIC/yiic request rejectPartners 2>&1 >> $PATH_TO_CRON_LOG/request.rejectPartners.log# уведомления клиник о поступлении заявки на диагностику онлайн
+*/1 * * * * docdoc $PATH_TO_YIIC/yiic clinicnotify 2>&1 >> $PATH_TO_CRON_LOG/clinicnotify.log
+
+# Ежемесячная сверка для клиник, 20 числа каждого месяца
+0 12 20 * * docdoc $PATH_TO_YIIC/yiic clinicnotify reconciliation 2>&1 >> $PATH_TO_CRON_LOG/clinicnotify.log
+
+# Выгрузка телефонов в базы данных астерисков
+*/15 * * * * docdoc $PATH_TO_YIIC/yiic asteriskPhoneUpload 2>&1 >> $PATH_TO_CRON_LOG/asteriskPhoneUpload.log
+# Установка партнерского статуса всем заявкам в холде на 8 день месяца
+0 5 8 * * docdoc $PATH_TO_YIIC/yiic request rejectPartners 2>&1 >> $PATH_TO_CRON_LOG/request.rejectPartners.log

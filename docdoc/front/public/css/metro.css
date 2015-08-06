@@ -1,0 +1,488 @@
+/*
+	(c) 2012 Copyright Art. Lebedev | http://www.artlebedev.ru/
+	Author - Oleg Korovin (madcow@design.ru)
+*/
+
+.metrobox{
+    position: relative;
+}
+
+.als_metro {
+    padding: 0 0 50px;
+    position: relative;
+    font:12px Arial;
+    float: left;
+}
+.als_metro img {
+    position: relative;
+    z-index: 8;
+    opacity: 0;
+    filter:alpha(opacity=0);
+}
+.als_metro_station {
+    position: absolute;
+    top:0;
+    left:0;
+    cursor: pointer;
+    z-index: 22;  /* Станции лежат выше веток и пр. */
+    background: #fff;
+}
+.als_metro_station_label {
+    position: absolute;
+    top:0;
+    left:0;
+    background: url("metro.css") no-repeat 0 0; /* цсс в качестве бг, чтобы фиксить баг ИЕ */
+    z-index: 22;
+}
+
+/****/
+.als_metro_branch {
+    position: absolute;
+    top:0;
+    left:0;
+    cursor: pointer;
+    z-index: 22;
+    opacity: 0;
+    filter:alpha(opacity=0);
+}
+.als_metro_branch_label {
+    position: absolute;
+    top:0;
+    left:0;
+    background: url("metro.css") no-repeat 0 0;
+    z-index: 22;
+}
+
+.als_metro_branch:hover,
+.als_metro_branch_hover,
+.als_metro_branch_active {
+    opacity: 1;
+    filter:alpha(opacity=100);
+}
+
+.als_metro_branch_img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 20;
+    background: url("") no-repeat 0 0;
+    opacity: 0;
+    filter:alpha(opacity=0);
+}
+.als_metro_branch_img_h {
+    width: 100%;
+    height: 100%;
+    background: url("") no-repeat 0 0;
+    opacity: 0;
+    filter:alpha(opacity=0);
+}
+
+.als_metro_branch_img_hover {
+    opacity: 1;
+    filter:alpha(opacity=100);
+    background-position: -10000px 0;
+}
+.als_metro_branch_img_hover .als_metro_branch_img_h {
+    opacity: 1;
+    filter:alpha(opacity=100);
+}
+
+.als_metro_branch_img_active {
+    opacity: 1;
+    filter:alpha(opacity=100);
+}
+
+/****/
+.als_metro_fade {
+    width: 100%;
+    min-height: 100%;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    background: #FFF;
+    opacity: 0.7;
+    filter:alpha(opacity=70);
+    /*display: none;/**/
+    z-index: 2;
+}
+
+/****/
+.als_metro_actions {
+    padding: 5px 0;
+    display: inline-block;
+//display: inline;
+    zoom:1;
+    position: absolute;
+    left: 0;
+    /*top:966px;*/
+    top:1127px;
+    z-index: 23;
+    /*background: #f2f2f2;*/
+}
+.als_metro_actions .pseudo {
+    margin: 0 10px 0 0;
+}
+
+.als_metro_wrapper{
+    display: block;
+    padding: 2px 6px 2px 6px;
+    border-radius: 3px;
+    margin: 6px 0 0 -7px;
+    border: 1px solid transparent;
+}
+.als_metro_wrapper.active{
+    background-color: #EEEEEE;
+}
+
+.als_metro_deselect{
+    color: #00898b;
+    font-weight: normal;
+    display: inline-block;
+    font-size: 11px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+/***********************************************************/
+.ui-autocomplete {
+    max-height: 150px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+    /* add padding to account for vertical scrollbar */
+    padding-right: 0px;
+
+    font:12px Arial;
+    border-radius: 0 !important;
+    box-shadow: 1px 1px 1px 0px #777;
+}
+.ui-autocomplete li:before {display: none;}
+
+.ui-autocomplete a {
+    border-radius: 0 !important;
+    color: #000 !important;
+    border-color: #fff !important;
+    /*border-left: none !important;/**/
+    /*border-right: none !important;/**/
+}
+.ui-autocomplete #ui-active-menuitem {
+    background: #DAE8F3 !important;
+}
+
+
+
+
+/***********************************************************/
+
+/***********************************************************/
+/*****************/
+/* Москва */
+.als_metro_moscow {
+    margin-right: 8px;
+    width: 900px;
+    height: 950px;
+    background: url('/img/metro/moscow/metro.gif') no-repeat 0 0;
+}
+.als_metro_moscow .als_metro_station_active .als_metro_station_label {
+    background-image: url('/img/metro/moscow/metro_t.png');
+}
+.als_metro_moscow .als_metro_station_active .als_metro_station_label.als_metro_station_point{
+    background: url('/img/metro/station_selected.png') no-repeat;
+    background-position: 0 0 !important;
+}
+.als_metro_moscow .als_metro_station:hover .als_metro_station_label:first-child,
+.als_metro_moscow .als_metro_station_hover .als_metro_station_label:first-child {
+    background-image: url('/img/metro/moscow/metro_t.png');
+}
+
+
+/****/
+/* Чтобы картинки с выделенными названиями заранее подгрузились, прописываем их ветке и ее лейблу */
+.als_metro_moscow .als_metro_branch {
+    background-image: url('/img/metro/moscow/metro_t.png');
+}
+
+.als_metro_moscow .als_metro_branch_active .als_metro_branch_label {
+    background-image: url('/img/metro/moscow/metro_t.png');
+}
+
+
+/******************** extended **************************/
+
+
+.ex_location {
+    margin: 0px 0 0 ;
+    padding: 20px 20px 0;
+    /*border-top: 1px solid #e5e5e5;/**/
+    /*background: url('../global/note_wave.gif') repeat-x 0 0;*/
+}
+.ex_location_tab {
+    width: 100%;
+}
+.ex_location_td_l {
+    width: 35%;
+    font-size: 16px;
+}
+.ex_location_title {
+    padding: 0 0 20px;
+    font:bold 16px Times New Roman;
+}
+.ex_location_td_l select,
+.ex_location_td_l input {
+    font-size: 16px;
+    margin-left: 0;
+}
+
+.ex_location_params_block {
+    padding: 0 0 20px;
+}
+
+.ex_location_list {}
+.ex_location_list dl {
+    margin: 0;
+    padding: 5px 20px 0 0;
+    display: inline-block;
+//display: inline;
+    zoom:1;
+}
+.ex_location_list dt {
+    margin: 0;
+    padding: 0;
+    display: inline;
+    font-style: italic;
+}
+.ex_location_list dd {
+    width: 7px;
+    height: 7px;
+    margin: 0 0 -2px 5px;/**/
+    padding: 0;
+    display: inline-block;
+//display: inline;
+    zoom:1;
+    /*position: absolute;
+    top: 50%;
+    right: 7px;/**/
+    background: url('../img/metro/popup_closer.gif') no-repeat 0 0;
+    cursor: pointer;
+    vertical-align: 2px;
+}
+.ex_location_list dd:hover {
+    background-position: 0 100%;
+}
+.ex_location_add {
+    width: 16px;
+    height: 16px;
+    margin: 0 0 0 10px;
+    display: inline-block;
+    cursor: pointer;
+    vertical-align: -3px;
+}
+.ex_location_add:hover{
+    background-position: 0 50%;
+}
+
+.ex_location_add.disabled{
+    cursor: default;
+    background-position: 0 100%;
+}
+
+.ex_location_td_r {
+    width: 65%;
+}
+
+.ex_location_map_triggers {
+    padding: 0 0 10px;
+    margin: 0 0 10px;
+    font-size: 16px;
+    /*border-bottom: 1px solid #ccc;*/
+}
+.ex_location_map_triggers .pseudo {
+    margin: 0 10px 0 0;
+}
+.ex_location_map_triggers .active {
+    padding: 1px 3px;
+    background: #9ac0de;
+    color: black !important;
+    border: none !important;
+    cursor: default;
+    font-weight: bold;
+}
+
+.ex_location_params_block select {
+    font-size: 14px;
+}
+.ex_location_map_triggers {
+
+}
+
+.ex_location_add_disabled{
+    background-position: 0 100%;
+    cursor: default;
+}
+.ex_location_add_disabled:hover{
+    background-position: 0 100%;
+}
+
+.ex_location_add_strong_disabled{
+    color: #888888;
+}
+
+.metro_selected {
+    position: relative;
+    overflow: hidden;
+}
+
+.metro_selected dl {
+    padding: 5px 20px 0 0;
+    display: inline-block;
+//display: inline;
+    zoom:1;
+}
+
+#metro {
+    display: inline-block;
+}
+
+.metro_list_selected {
+    width: 80%;
+    float: left;
+}
+
+.metro_list_selected_actions {
+    width: 19%;
+    float: right;
+}
+
+.metro_section_controls {
+    width: auto;
+    clear: both;
+    overflow: hidden;
+    position: relative;
+    bottom: 0px;
+    margin-left: -10px;
+    width: 920px;
+    z-index: 10000;
+    background: #fff;
+    border-top: 1px solid #777;
+    padding: 10px 20px 10px 20px;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.metro_selected_title {
+    color: #666666;
+    font-size: 12px;
+    font-size: 1.2rem;
+}
+
+.metro_selected_label {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 12px;
+    font-size: 1.2rem;
+    white-space: nowrap;
+}
+
+/******************** extended **************************/
+
+/***** =metro_line *****/
+.metro_link {
+    background-image: url('/img/sprites/spr_metro.png');
+    background-repeat: no-repeat;
+    padding-left: 18px;
+}
+
+.metro_link_dist {
+    color: #999999;
+}
+
+/* Москва */
+/* Замоскворецкая */
+.metro_line_1 {
+    background-position: 0 -44px;
+}
+
+/* Филевская */
+.metro_line_2 {
+    background-position: 0 -68px;
+}
+
+/* Калининская */
+.metro_line_3 {
+    background-position: 0 -160px;
+}
+
+/* Серпуховско-Тимирязевская */
+.metro_line_4 {
+    background-position: 0 -182px;
+}
+
+/* Калужско-Рижская */
+.metro_line_5 {
+    background-position: 0 -114px;
+}
+
+/* Каховская */
+.metro_line_6 {
+    background-position: 0 -68px;
+}
+
+/* Сокольническая */
+.metro_line_7 {
+    background-position: 0 1px;
+}
+
+/* Арбатско-Покровская */
+.metro_line_8 {
+    background-position: 0 -22px;
+}
+
+/* Таганско-Краснопресненская */
+.metro_line_9 {
+    background-position: 0 -137px;
+}
+
+/* Люблинская */
+.metro_line_10 {
+    background-position: 0 -252px;
+}
+
+/* Кольцевая */
+.metro_line_11 {
+    background-position: 0 -90px;
+}
+
+/* Бутовская */
+.metro_line_12 {
+    background-position: 0 -228px;
+}
+
+
+/* Санкт-Петербург *.
+/* Кировско-Выборгская */
+.metro_line_13 {
+    background-position: 0 1px;
+}
+
+/* Московско-Петроградская */
+.metro_line_14 {
+    background-position: 0 -68px;
+}
+
+/* Невско-Василеостровская */
+.metro_line_15 {
+    background-position: 0 -45px;
+}
+
+/* Правобережная */
+.metro_line_16 {
+    background-position: 0 -114px;
+}
+
+/* Фрунзенская */
+.metro_line_17 {
+    background-position: 0 -137px;
+}
+
+/***** metro_line end *****/

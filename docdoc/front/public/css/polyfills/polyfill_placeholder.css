@@ -1,0 +1,61 @@
+span.placeholder{
+    position:absolute;
+    color:#333;
+    font-family:sans-serif;
+    padding:2px 1px;
+    z-index:1;
+    cursor:text;
+}
+
+span.placeholder-hide-except-screenreader {
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    padding:0 !important;
+    border:0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden;
+}
+
+span.placeholder-hide{
+	display:none;
+}
+
+/* overwrite for the HTML5 Boilerplate way to hide labels */
+label.visuallyhidden-with-placeholder{
+    /*clip: auto !important;*/
+    height:auto !important;
+    overflow: visible !important;
+    position:absolute !important;
+    left:-999em;
+}
+
+/* dd custom */
+.req_form_row {
+	position: relative;
+}
+.req_form .placeholder{
+	left: 105px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.search .placeholder{
+	font-weight: normal;
+	padding-top: 7px;
+}
+
+.review_form .placeholder_label .placeholder{
+	font-size: 11px;
+	left: 5px;
+	top: -1px;
+}
+
+.review_form .placeholder_label_textarea .placeholder{
+	font-size: 11px;
+	left: 5px;
+}
+
+.review_form .placeholder_label, .review_form .placeholder_label_textarea {
+	position: relative;	
+}

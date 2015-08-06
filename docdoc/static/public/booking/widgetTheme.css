@@ -1,0 +1,155 @@
+.request_popup_btn {
+	color: #4b4d4c;
+	font-size: 16px;
+	font-style: normal;
+	font-family: Arial, Helvetica, sans-serif;
+	width: 164px;
+	height: 38px;
+	line-height: 36px;
+	text-align: center;
+	border: 1px solid #9b8e75;
+	background: #fedb4b;
+	background: -moz-linear-gradient(top,  #fedb4b 0%, #ffcf09 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fedb4b), color-stop(100%,#ffcf09));
+	background: -webkit-linear-gradient(top,  #fedb4b 0%,#ffcf09 100%);
+	background: -o-linear-gradient(top,  #fedb4b 0%,#ffcf09 100%);
+	background: -ms-linear-gradient(top,  #fedb4b 0%,#ffcf09 100%);
+	background: linear-gradient(to bottom,  #fedb4b 0%,#ffcf09 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fedb4b', endColorstr='#ffcf09',GradientType=0 );
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: inset 0 1px 4px #fff4ad;
+	box-shadow: inset 0 1px 4px #fff4ad, 0 1px 1px 1px rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+}
+
+.request_popup_time_maybe:hover,
+.request_popup_time_next:hover,
+.request_popup_time_prev:hover {
+	background: #fffadd;
+	border-color: #ba9914;
+	color: #ba9914;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.request_popup_time_maybe.request_popup_time_act,
+.request_popup_time_maybe:active,
+.request_popup_time_next:active,
+.request_popup_time_prev:active {
+	background: #676767;
+	border-color: #000;
+	color: #fff;
+	text-shadow: 0 -1px 0 #000;
+	-webkit-box-shadow: inset 0 0 0 1px #acacac;
+	box-shadow: inset 0 0 0 1px #acacac;
+}
+
+.request_popup_bottom_cont a {
+	color: #0069ba;
+}
+
+
+.request_popup_datepicker .xdsoft_mounthpicker {
+	border-radius: 5px;
+	min-height: 35px;
+	border: 1px solid #ccc;
+	-webkit-box-shadow: inset 0 0 0 1px #fff;
+	box-shadow: inset 0 0 0 1px #fff;
+	background: rgb(255,255,255);
+	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(241,240,237,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(241,240,237,1)));
+	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(241,240,237,1) 100%);
+	background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(241,240,237,1) 100%);
+	background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(241,240,237,1) 100%);
+	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(241,240,237,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f1f0ed',GradientType=0 );
+}
+.request_popup_datepicker.xdsoft_datetimepicker .xdsoft_datepicker {
+	margin-left: 4px;
+}
+.request_popup_datepicker.xdsoft_datetimepicker {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	padding: 4px 4px 4px 0;
+	border-radius: 5px;
+	margin-left: -286px;
+	border-color: #ccc;
+	font-family: Arial;
+}
+.request_popup_datepicker.xdsoft_datetimepicker .xdsoft_datepicker {
+	width: 280px;
+}
+.request_popup_datepicker.xdsoft_datetimepicker .xdsoft_label {
+	background: none;
+	text-align: center;
+	padding: 7px 3px 4px;
+	width: auto;
+	display: inline-block;
+	float: none;
+}
+.request_popup_datepicker.xdsoft_datetimepicker .xdsoft_calendar th {
+	background: none;
+	border: 0;
+	color: #000;
+}
+.request_popup_datepicker.xdsoft_datetimepicker .xdsoft_calendar td {
+	border: 0;
+	background: none;
+}
+.request_popup_datepicker.xdsoft_datetimepicker .xdsoft_today_button {
+	display: none;
+}
+.request_popup_datepicker.xdsoft_datetimepicker .xdsoft_calendar td div {
+	background: rgb(255,255,255);
+	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(241,240,237,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(241,240,237,1)));
+	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(241,240,237,1) 100%);
+	background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(241,240,237,1) 100%);
+	background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(241,240,237,1) 100%);
+	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(241,240,237,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f1f0ed',GradientType=0 );
+	height: 24px;
+	border: 1px solid #ccc;
+	margin: 1px;
+	font-size: 14px;
+	line-height: 22px;
+	text-align: center;
+	padding: 0;
+	color: #000;
+}
+.request_popup_datepicker.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_default,
+.request_popup_datepicker.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current,
+.request_popup_datepicker.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div.xdsoft_current {
+	border: 0;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+	background: none !important;
+}
+.request_popup_datepicker.xdsoft_datetimepicker  .xdsoft_calendar td:hover,
+.request_popup_datepicker.xdsoft_datetimepicker  .xdsoft_timepicker .xdsoft_time_box >div >div:hover{
+	background: none !important;
+	box-shadow: none !important;
+}
+.request_popup_datepicker.xdsoft_datetimepicker .xdsoft_calendar td:hover div {
+	border-color: #ba9914;
+	color: #b99813;
+	background: #fef9db;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.request_popup_datepicker.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current div {
+	color: #fff;
+	border-color: #000;
+	background: #676767;
+	-webkit-box-shadow: inset 0 0 0 1px #52e4da;
+	box-shadow: inset 0 0 0 1px #52e4da;
+	text-shadow: 0 -1px 1px #000;
+}
+.request_popup_datepicker.xdsoft_datetimepicker  .xdsoft_calendar td.xdsoft_other_month,
+.request_popup_datepicker.xdsoft_datetimepicker  .xdsoft_calendar td.xdsoft_disabled,
+.request_popup_datepicker.xdsoft_datetimepicker  .xdsoft_time_box >div >div.xdsoft_disabled{
+	opacity:0.3;
+	filter: alpha(opacity=30);
+}
+/* datepicker end */

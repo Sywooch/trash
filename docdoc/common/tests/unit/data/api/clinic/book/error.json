@@ -1,0 +1,4 @@
+{"jsonrpc": 2.0, "error": {
+    "code": 32404,
+    "message": "No such slot"
+}, "id": 99}

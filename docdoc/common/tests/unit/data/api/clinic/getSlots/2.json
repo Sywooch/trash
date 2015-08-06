@@ -1,0 +1,14 @@
+{
+    "jsonrpc": 2.0,
+    "result":[
+        {
+            "resourceId" : "external_clinic_id_2#sadfasdfas",
+            "slotId"     : "uui32342323d",
+            "attributes" : {
+                "from" : "2030-01-01 13:00",
+                "to"   : "2030-01-01 13:30"
+            }
+        }
+    ],
+    "id": "abc"
+}
