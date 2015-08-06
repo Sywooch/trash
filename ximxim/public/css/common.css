@@ -1,0 +1,87 @@
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+*:focus {
+	outline: 0;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-weight: 400;
+	font-family: "Arial", "Verdana", "sans-serif";
+	font-size: 14px;
+	color: #333;
+	overflow: hidden;
+}
+
+.container {
+	width: 980px;
+	margin: 0 auto;
+}
+
+a {
+	color: 008 ace;
+	text-decoration: none;
+	border-bottom: 1px solid #b2ccf0;
+}
+
+a:hover {
+	color: #cc0000;
+	border-bottom-color: #f0b2b2;
+}
+
+.clear {
+	clear: both;
+}
+
+#header {
+	height: 100px;
+	line-height: 100px;
+	font-size: 30px;
+	border-bottom: 1px solid #ccc;
+}
+
+#comment-success {
+	display: none;
+}
+
+#left {
+	width: 300px;
+	float: left;
+	padding-right: 50px;
+	border-right: 1px solid #ccc;
+}
+
+#content {
+	margin-left: 350px;
+}
+
+h1 a {
+	font-size: 14px;
+}
+
+h3 {
+	margin-top: 30px;
+}
+
+.news-item {
+	margin: 15px 0;
+}
+
+.news-text {
+	margin: 15px;
+}
+
+#comments-container > div {
+	margin: 15px 0;
+}
+
+.comment-text {
+	font-style: italic;
+}
